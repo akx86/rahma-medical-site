@@ -1,0 +1,161 @@
+"use client";
+
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
+import Image from "next/image";
+import { NAV_LINKS, LEGAL_LINKS, CONTACT_INFO } from "@/constants/nav-links";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+} from "lucide-react";
+
+export default function Footer() {
+  const t = useTranslations("Footer");
+  const tNav = useTranslations("Navigation");
+
+  return (
+    // 1. قللنا الـ margin-top لـ 20 بدل 40 عشان نقرب الفوتر من المحتوى
+    <footer className="relative mt-20">
+      {/* 2. قللنا ارتفاع التدرج لـ h-20 (يعني 80px) بدل h-40 */}
+      {/* ده هيخلي التدرج ناعم بس مش هيفرش لفوق جامد */}
+      <div className="absolute top-0 left-0 right-0 w-full h-20 -translate-y-full bg-gradient-to-b from-transparent to-[#082f49] backdrop-blur-[1px] pointer-events-none"></div>
+
+      {/* 3. ضغطنا الـ padding لـ pb-8 بدل pb-10 عشان نلم الارتفاع الكلي */}
+      <div className="bg-[#082f49] text-white pb-8 pt-4">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-8">
+            {" "}
+            {/* قللنا المسافة تحت الـ Grid */}
+            {/* Column 1: Logo & About */}
+            <div className="flex flex-col gap-5">
+              {" "}
+              {/* قللنا الجاب شوية */}
+              <Link href="/" className="inline-block">
+                <Image
+                  src="/logo.svg"
+                  alt="Rahma Medical Logo"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  className="w-48 h-auto object-contain brightness-0 invert opacity-95" // صغرنا اللوجو سنة بسيطة (w-40)
+                />
+              </Link>
+              <p className="text-blue-100/80 text-sm leading-relaxed max-w-xs">
+                {t("about_description")}
+              </p>
+              <div className="flex gap-3 mt-2">
+                {[Facebook, Twitter, Instagram, Linkedin].map((Icon, idx) => (
+                  <a
+                    key={idx}
+                    href="#"
+                    className="group bg-[#0c4a6e]/40 p-2.5 rounded-xl hover:bg-sky-500 transition-all duration-300 text-sky-200 hover:text-white hover:-translate-y-1 hover:shadow-lg hover:shadow-sky-500/20"
+                  >
+                    <Icon size={18} />
+                  </a>
+                ))}
+              </div>
+            </div>
+            {/* Column 2: Quick Links */}
+            <div>
+              <h3 className="text-base font-bold mb-4 text-white tracking-wide">
+                {" "}
+                {/* صغرنا العنوان وتخانته */}
+                {t("quick_links")}
+              </h3>
+              <ul className="space-y-3">
+                {NAV_LINKS.map((link) => (
+                  <li key={link.key}>
+                    <Link
+                      href={link.href}
+                      className="text-blue-200/70 hover:text-white hover:translate-x-2 rtl:hover:-translate-x-2 transition-all duration-300 inline-block text-sm"
+                    >
+                      {tNav(link.key)}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            {/* Column 3: Legal */}
+            <div>
+              <h3 className="text-base font-bold mb-4 text-white tracking-wide">
+                {t("legal")}
+              </h3>
+              <ul className="space-y-3">
+                {LEGAL_LINKS.map((link) => (
+                  <li key={link.key}>
+                    <Link
+                      href={link.href}
+                      className="text-blue-200/70 hover:text-white hover:translate-x-2 rtl:hover:-translate-x-2 transition-all duration-300 inline-block text-sm"
+                    >
+                      {t(link.key)}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            {/* Column 4: Contact Us */}
+            <div>
+              <h3 className="text-base font-bold mb-4 text-white tracking-wide">
+                {t("contact_us")}
+              </h3>
+              <ul className="space-y-4">
+                <li>
+                  <a
+                    href={`tel:${CONTACT_INFO.phone}`}
+                    className="flex items-center gap-3 text-blue-100/80 hover:text-white group transition-colors"
+                  >
+                    <div className="bg-[#0c4a6e]/50 p-2 rounded-lg group-hover:bg-sky-500 transition-colors shadow-sm border border-white/5">
+                      <Phone size={16} />
+                    </div>
+                    <span dir="ltr" className="text-sm font-medium">
+                      {CONTACT_INFO.phone}
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={`mailto:${CONTACT_INFO.email}`}
+                    className="flex items-center gap-3 text-blue-100/80 hover:text-white group transition-colors"
+                  >
+                    <div className="bg-[#0c4a6e]/50 p-2 rounded-lg group-hover:bg-sky-500 transition-colors shadow-sm border border-white/5">
+                      <Mail size={16} />
+                    </div>
+                    <span className="text-sm font-medium">
+                      {CONTACT_INFO.email}
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={CONTACT_INFO.mapLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-start gap-3 text-blue-100/80 hover:text-white group transition-colors"
+                  >
+                    <div className="bg-[#0c4a6e]/50 p-2 rounded-lg group-hover:bg-sky-500 transition-colors shadow-sm mt-1 border border-white/5">
+                      <MapPin size={16} />
+                    </div>
+                    <span className="text-sm font-medium leading-relaxed">
+                      {t(CONTACT_INFO.addressKey)}
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="border-t border-sky-900/30 pt-6 mt-2 text-center md:text-start flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-xs text-blue-200/50 font-light">
+              {t("copyright")}
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}

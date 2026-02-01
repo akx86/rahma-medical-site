@@ -1,0 +1,18 @@
+export const NAV_LINKS = [
+  { href: "/", key: "home" },
+  { href: "/about", key: "about" },
+  { href: "/services", key: "services" },
+  { href: "/partners", key: "partners" },
+  { href: "/contact", key: "contact" },
+];
+export const LEGAL_LINKS = [
+  { href: "/privacy", key: "privacy" },
+  { href: "/terms", key: "terms" },
+];
+
+export const CONTACT_INFO = {
+  phone: "+966500000000",
+  email: "info@rahma-medical.com",
+  addressKey: "address", // المفتاح اللي في ملف الترجمة
+  mapLink: "https://maps.google.com/?q=Riyadh", // رابط جوجل مابس
+};
