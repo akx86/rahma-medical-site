@@ -1,15 +1,21 @@
-import { useTranslations } from "next-intl";
-
+import AboutSummary from "@/components/home/AboutSummary";
+import HeroSection from "@/components/home/HeroSection";
+import Stats from "@/components/home/Stats";
+import Services from "@/components/home/Services";
+import FeaturedProducts from "@/components/home/FeaturedProducts";
+import WhyChooseUs from "@/components/home/WhyChooseUs";
+import CTASection from "@/components/home/CTASection";
 export default function Home() {
-  const t = useTranslations('HomePage');
   
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
-      <h1 className="text-4xl font-bold">{t('title')}</h1>
-      <p className="text-xl mt-4">{t('welcome')}</p>
-      <button className="bg-primary text-primary-foreground px-4 py-2 rounded-md hover:bg-brand-600 transition-colors">
-        تجربة لون البراند (Medical Blue)
-      </button>
+    <main className="flex flex-col min-h-screen">
+      <HeroSection/>
+      <Stats/>
+      <AboutSummary/>
+      <Services/>
+      <FeaturedProducts/>
+      <WhyChooseUs/>
+      <CTASection/>
     </main>
   );
 }

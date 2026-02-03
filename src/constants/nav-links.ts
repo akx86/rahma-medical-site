@@ -11,8 +11,8 @@ export const LEGAL_LINKS = [
 ];
 
 export const CONTACT_INFO = {
-  phone: "+966500000000",
-  email: "info@rahma-medical.com",
+  phone: "+966549131756",
+  email: "info@rahmamedical.com",
   addressKey: "address", // المفتاح اللي في ملف الترجمة
   mapLink: "https://maps.google.com/?q=Riyadh", // رابط جوجل مابس
 };

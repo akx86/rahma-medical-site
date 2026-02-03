@@ -90,6 +90,7 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
         shimmer: "shimmer 1.5s infinite",
       },
+      
     },
   },
   plugins: [require("tailwindcss-animate")],

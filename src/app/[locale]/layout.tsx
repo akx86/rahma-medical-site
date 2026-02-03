@@ -1,14 +1,24 @@
 import type { Metadata } from "next";
-import { Cairo, Inter } from "next/font/google"; // استيراد الخطوط
-import "../globals.css"; // تأكد ان المسار صح (ممكن يحتاج ../../globals.css حسب مكان الملف)
+import { Inter } from "next/font/google"; // استيراد الخطوط
+import { IBM_Plex_Sans_Arabic } from "next/font/google";
+import "../globals.css"; 
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 // تعريف الخطوط
-const cairo = Cairo({ subsets: ["arabic"], variable: "--font-cairo" });
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const inter = Inter({ 
+  subsets: ["latin"], 
+  variable: "--font-inter",
+  display: "swap",
+});
+const ibmPlexArabic = IBM_Plex_Sans_Arabic({ 
+  subsets: ["arabic"],
+  weight: ["100", "200", "300", "400", "500", "600", "700"], // جبنا كل الأوزان
+  variable: "--font-ibm", // هنسميه ibm
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Rahma Medical",
@@ -29,13 +39,15 @@ export default async function RootLayout({ children, params }: Props) {
   return (
     <html lang={locale} dir={direction}>
       <body
-        className={`${cairo.variable} ${inter.variable} ${
-          locale === "ar" ? cairo.className : inter.className
+        className={`${ibmPlexArabic.variable} ${inter.variable} ${
+          locale === "ar" ? ibmPlexArabic.className : inter.className
         } antialiased`}
       >
         <NextIntlClientProvider messages={messages}>
           <Navbar />
-          <main className="min-h-screen pt-4">{children}</main>
+          <main className="flex-grow">
+            {children}
+            </main>
           <Footer />
         </NextIntlClientProvider>
       </body>

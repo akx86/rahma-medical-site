@@ -25,5 +25,81 @@
     "contact_us": "Contact Us",
     "address": "Riyadh, Saudi Arabia",
     "copyright": "All rights reserved © 2026 Rahma Medical"
+  },
+"Hero": {
+  "title": "Quality Healthcare Begins Here",
+  "subtitle": "We simplify access to safe and reliable medical supplies for every home and healthcare facility, adhering to the highest global standards.",
+  "shop_now": "Shop Now",
+  "contact_us": "Contact Us"
+},
+"Stats": {
+  "years": "Years Experience",
+  "products": "Certified Products",
+  "clients": "Trusted Clients",
+  "support": "24/7 Support"
+},
+"AboutSummary": {
+  "subtitle": "Who We Are",
+  "title": "Your Trusted Reference for Medical Supplies",
+  "description": "We believe healthcare starts with quality. Our mission is to simplify access to certified medical supplies for individuals and healthcare facilities, adhering to the highest safety standards for a sustainable journey of wellness.",
+  "button": "Read More",
+  "badge_text": "Certified Products",
+  "badge_sub": "Compliant with Standards"
+},
+"Services": {
+  "subtitle": "Our Services",
+  "title": "Integrated Medical Solutions",
+  "description": "We offer a comprehensive range of services to meet the healthcare sector needs, from supply to after-sales support.",
+  "items": {
+    "equipment_title": "Hospital Equipment",
+    "equipment_desc": "Providing the latest medical devices for ORs and ICUs.",
+    "supplies_title": "Medical Supplies",
+    "supplies_desc": "Supplying daily consumables and PPE at the best prices.",
+    "lab_title": "Lab Solutions",
+    "lab_desc": "Precise laboratory tools ensuring reliable analysis results.",
+    "maintenance_title": "Maintenance & Support",
+    "maintenance_desc": "Specialized engineering team ensuring device efficiency 24/7.",
+    "logistics_title": "Logistics & Delivery",
+    "logistics_desc": "Strong distribution network covering all regions safely.",
+    "b2b_title": "Wholesale Sector",
+    "b2b_desc": "Special offers and facilities for tenders and bulk orders."
   }
+},
+"FeaturedProducts": {
+  "subtitle": "Shop Online",
+  "title": "Everything You Need in One Place",
+  "description": "Browse our online store for the latest medical products with doorstep delivery.",
+  "cta": "Visit Main Store",
+  "items": {
+    "cat1": "Rehabilitation & Supports",
+    "cat2": "Mobility",
+    "cat3": "Home Medical Devices",
+    "cat4": "Clinics & Hospitals",
+    "cat5": "Emergency & First Aid",
+    "cat6": "Elderly Care"
+  }
+},
+"WhyChooseUs": { 
+  "subtitle": "Why Choose Us?",
+  "title": "Excellence in Medical Service",
+  "description": "We always strive to provide the best experience for our clients through strict quality standards.",
+  
+  "fast_delivery_title": "Fast Delivery",
+  "fast_delivery_desc": "Safe and fast shipping to all regions of the Kingdom.",
+  
+  "authentic_title": "100% Authentic",
+  "authentic_desc": "Quality guaranteed with certified warranties.",
+  
+  "support_title": "Continuous Support",
+  "support_desc": "After-sales service and immediate maintenance for equipment.",
+  
+  "coverage_title": "Comprehensive Coverage",
+  "coverage_desc": "A distribution network that reaches you wherever you are."
+},
+"CTASection": {
+  "title": "Looking for a Trusted Medical Partner?",
+  "description": "We are here to help you choose the best equipment that fits your needs and budget. Let's start success together.",
+  "btn_primary": "Contact Us Now",
+  "btn_secondary": "Download Catalog"
+}
 }

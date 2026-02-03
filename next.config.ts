@@ -9,6 +9,14 @@ const nextConfig = {
       "3000-firebase-rahma-medical-site-1769879640021.cluster-64pjnskmlbaxowh5lzq6i7v4ra.cloudworkstations.dev",
     ],
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com', // السماح لصور Unsplash
+      },
+    ],
+  },
 };
 
 export default withNextIntl(nextConfig);
