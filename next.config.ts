@@ -4,19 +4,7 @@ const withNextIntl = createNextIntlPlugin();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  server: {
-    allowedOrigins: [
-      "3000-firebase-rahma-medical-site-1769879640021.cluster-64pjnskmlbaxowh5lzq6i7v4ra.cloudworkstations.dev",
-    ],
-  },
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com', // السماح لصور Unsplash
-      },
-    ],
-  },
+  reactStrictMode: true,
 };
 
 export default withNextIntl(nextConfig);
