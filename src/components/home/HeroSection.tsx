@@ -6,7 +6,7 @@ import { Link } from "@/i18n/routing";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ShoppingBag } from "lucide-react"; 
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const HERO_IMAGES = [
   "/hero-1.jpg",
@@ -21,62 +21,64 @@ export default function Hero() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % HERO_IMAGES.length);
-    }, 6000); 
+    }, 6000); // كل 6 ثواني نقلب
     return () => clearInterval(timer);
   }, []);
 
   return (
-    // الخلفية هنا sky-900 عشان لو الصورة لسه محملتش، بس الماسك هيخلينا نشوف خلفية الصفحة البيضاء من تحت
     <section className="relative w-full h-[55dvh] min-h-[450px] md:min-h-0 md:h-screen flex items-center overflow-hidden bg-sky-900">
       
-      {/* 1. منطقة الصور (مع الماسك السحري) */}
+      {/* 1. منطقة الصور (Stacked Layers) */}
       <div className="absolute inset-0 w-full h-full z-0">
-        <AnimatePresence mode="popLayout">
-          <motion.div
-            key={currentIndex}
-            initial={{ opacity: 0, scale: 1 }}
-            animate={{ opacity: 1, scale: 1.15 }}
-            exit={{ opacity: 0 }}
-            transition={{
-              opacity: { duration: 1.5, ease: "easeInOut" },
-              scale: { duration: 20, ease: "linear" }
-            }}
-            // التريكاية هنا: mask-image
-            // بتخلي الصورة تظهر كاملة لحد 80% من طولها، وبعدين تختفي بالتدريج لحد ما تبقى شفافة خالص تحت
-            className="absolute inset-0 w-full h-full [mask-image:linear-gradient(to_bottom,black_80%,transparent_100%)]"
-          >
-            <Image 
-              src={HERO_IMAGES[currentIndex]}
-              alt="Hero Slide"
-              fill
-              style={{ objectFit: "cover", objectPosition: "center top" }}
-              className="object-cover" 
-              quality={90}
-              priority
-            />
-          </motion.div>
-        </AnimatePresence>
+        {HERO_IMAGES.map((src, index) => {
+          // هل الصورة دي هي اللي عليها الدور؟
+          const isActive = index === currentIndex;
+          
+          return (
+            <motion.div
+              key={index}
+              initial={false} // مهم جداً عشان أول ما الصفحة تفتح مايحصلش ومضة
+              animate={{
+                opacity: isActive ? 1 : 0,           // لو نشطة تظهر، غير كده تختفي
+                scale: isActive ? 1.1 : 1,           // زوم بطيء للصورة النشطة (Cinematic Zoom)
+                zIndex: isActive ? 10 : 0            // النشطة تطلع فوق الكل
+              }}
+              transition={{
+                opacity: { duration: 2.5, ease: "easeInOut" }, // مدة التداخل (طويلة عشان النعومة)
+                scale: { duration: 8, ease: "linear" }         // مدة الزوم
+              }}
+              // التريكاية: absolute inset-0 بتخليهم كلهم فوق بعض بالظبط
+              className="absolute inset-0 w-full h-full"
+            >
+              <div className="absolute inset-0 w-full h-full [mask-image:linear-gradient(to_bottom,black_80%,transparent_100%)]">
+                <Image 
+                  src={src}
+                  alt={`Hero Slide ${index + 1}`}
+                  fill
+                  style={{ objectFit: "cover", objectPosition: "center top" }}
+                  className="object-cover" 
+                  quality={90}
+                  priority // بنحمل كل الصور فوراً عشان مفيش حاجة تقطع
+                />
+              </div>
+            </motion.div>
+          );
+        })}
       </div>
 
       {/* === الطبقات (Overlays) === */}
-      {/* طبقة تدرج جانبي عشان الكلام يوضح */}
       <div className="absolute inset-0 bg-gradient-to-r from-sky-900/95 via-sky-800/60 to-transparent z-10 rtl:bg-gradient-to-l pointer-events-none" />
-      
-      {/* طبقة تدرج علوي خفيف عشان النافبار */}
       <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-sky-900/80 to-transparent z-10 pointer-events-none" />
 
-      {/* (تم حذف التدرج السفلي الكحلي نهائياً عشان الماسك يقوم بالواجب) */}
-
-
-      {/* 2. المحتوى */}
+      {/* 2. المحتوى (نفس الكود القديم) */}
       <div className="container relative z-20 mx-auto px-6 md:px-12 h-full flex flex-col justify-center pt-20 md:pt-0"> 
         
         <div className="max-w-3xl">
-          
           <motion.div
+            key={currentIndex} // ضفت الـ Key هنا عشان النص كمان يتعمل له ريفرش بسيط (اختياري)
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
             {/* Badge */}
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-500/20 border border-sky-400/30 backdrop-blur-md mb-4 md:mb-6">
@@ -149,7 +151,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* مؤشر السكرول (ديسك توب فقط) */}
+      {/* مؤشر السكرول */}
       <motion.div 
         className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 text-sky-200/60 hidden md:flex"
         initial={{ opacity: 0, y: -20 }}
