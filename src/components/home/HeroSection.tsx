@@ -14,6 +14,9 @@ const HERO_IMAGES = [
   "/hero-3.jpg"
 ];
 
+// مدة عرض كل صورة (بالمللي ثانية)
+const SLIDE_DURATION = 6000; 
+
 export default function Hero() {
   const t = useTranslations("Hero");
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -21,36 +24,44 @@ export default function Hero() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % HERO_IMAGES.length);
-    }, 6000); // كل 6 ثواني نقلب
+    }, SLIDE_DURATION); 
     return () => clearInterval(timer);
   }, []);
 
   return (
     <section className="relative w-full h-[55dvh] min-h-[450px] md:min-h-0 md:h-screen flex items-center overflow-hidden bg-sky-900">
       
-      {/* 1. منطقة الصور (Stacked Layers) */}
+      {/* 1. طبقة الخلفية (Images Layer) */}
       <div className="absolute inset-0 w-full h-full z-0">
         {HERO_IMAGES.map((src, index) => {
-          // هل الصورة دي هي اللي عليها الدور؟
           const isActive = index === currentIndex;
           
           return (
             <motion.div
               key={index}
-              initial={false} // مهم جداً عشان أول ما الصفحة تفتح مايحصلش ومضة
+              className="absolute inset-0 w-full h-full"
+              // الحالة الابتدائية: لو دي الصورة الأولى (0) ابدأ ظاهرة، غير كده ابدأ مخفي
+              initial={{ 
+                opacity: index === 0 ? 1 : 0, 
+                scale: 1 
+              }}
+              // الحركة:
               animate={{
-                opacity: isActive ? 1 : 0,           // لو نشطة تظهر، غير كده تختفي
-                scale: isActive ? 1.1 : 1,           // زوم بطيء للصورة النشطة (Cinematic Zoom)
-                zIndex: isActive ? 10 : 0            // النشطة تطلع فوق الكل
+                opacity: isActive ? 1 : 0,
+                // لو نشطة: كبر الصورة لـ 1.15 (Zoom In)
+                // لو غير نشطة: ارجع لـ 1 (عشان لما ييجي دورها تاني تبدأ من الأول)
+                scale: isActive ? 1.15 : 1, 
+                zIndex: isActive ? 10 : 0
               }}
               transition={{
-                opacity: { duration: 2.5, ease: "easeInOut" }, // مدة التداخل (طويلة عشان النعومة)
-                scale: { duration: 8, ease: "linear" }         // مدة الزوم
+                // التداخل (Fade): ناعم جداً لمدة 2 ثانية
+                opacity: { duration: 2, ease: "easeInOut" },
+                // الزوم: بطيء وخطي ومستمر طول مدة العرض
+                scale: { duration: SLIDE_DURATION / 1000 + 2, ease: "linear" } 
               }}
-              // التريكاية: absolute inset-0 بتخليهم كلهم فوق بعض بالظبط
-              className="absolute inset-0 w-full h-full"
             >
-              <div className="absolute inset-0 w-full h-full [mask-image:linear-gradient(to_bottom,black_80%,transparent_100%)]">
+              {/* الماسك عشان يخلي الصورة تختفي من تحت بنعومة */}
+              <div className="absolute inset-0 w-full h-full [mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)]">
                 <Image 
                   src={src}
                   alt={`Hero Slide ${index + 1}`}
@@ -58,7 +69,7 @@ export default function Hero() {
                   style={{ objectFit: "cover", objectPosition: "center top" }}
                   className="object-cover" 
                   quality={90}
-                  priority // بنحمل كل الصور فوراً عشان مفيش حاجة تقطع
+                  priority={true} // تحميل فوري لكل الصور لمنع التقطيع
                 />
               </div>
             </motion.div>
@@ -66,19 +77,20 @@ export default function Hero() {
         })}
       </div>
 
-      {/* === الطبقات (Overlays) === */}
-      <div className="absolute inset-0 bg-gradient-to-r from-sky-900/95 via-sky-800/60 to-transparent z-10 rtl:bg-gradient-to-l pointer-events-none" />
-      <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-sky-900/80 to-transparent z-10 pointer-events-none" />
-
-      {/* 2. المحتوى (نفس الكود القديم) */}
+      {/* === Overlays (طبقات التغميق) === */}
+      {/* طبقة عشان النص يبان */}
+      <div className="absolute inset-0 bg-gradient-to-r from-sky-950/90 via-sky-900/50 to-transparent z-10 rtl:bg-gradient-to-l pointer-events-none" />
+      
+      {/* 2. طبقة المحتوى (Content Layer) */}
+      {/* لاحظ: مفيش key هنا، فالعنصر ده مش هيتعمل له Re-render أبداً */}
       <div className="container relative z-20 mx-auto px-6 md:px-12 h-full flex flex-col justify-center pt-20 md:pt-0"> 
         
         <div className="max-w-3xl">
+          {/* الأنميشن ده بيحصل مرة واحدة بس أول ما الموقع يفتح */}
           <motion.div
-            key={currentIndex} // ضفت الـ Key هنا عشان النص كمان يتعمل له ريفرش بسيط (اختياري)
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
           >
             {/* Badge */}
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-500/20 border border-sky-400/30 backdrop-blur-md mb-4 md:mb-6">
@@ -151,7 +163,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* مؤشر السكرول */}
+      {/* Scroll Indicator */}
       <motion.div 
         className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 text-sky-200/60 hidden md:flex"
         initial={{ opacity: 0, y: -20 }}
