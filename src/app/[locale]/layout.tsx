@@ -6,6 +6,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Toaster } from "@/components/ui/sonner";
 
 // تعريف الخطوط
 const inter = Inter({ 
@@ -47,6 +48,7 @@ export default async function RootLayout({ children, params }: Props) {
           <Navbar />
           <main className="flex-grow">
             {children}
+            <Toaster position="top-center" richColors theme="light" closeButton />
             </main>
           <Footer />
         </NextIntlClientProvider>

@@ -101,5 +101,74 @@
   "description": "We are here to help you choose the best equipment that fits your needs and budget. Let's start success together.",
   "btn_primary": "Contact Us Now",
   "btn_secondary": "Download Catalog"
+},
+"AboutUs": {
+  "hero_title": "About Us",
+  "breadcrumb_home": "Home",
+  "breadcrumb_current": "About Us",
+  "hero_subtitle": "your partner in the journey of wellness",
+  "story_title": "About Rahma Medical",
+  "story_text_1": "At Rahma Medical, we believe healthcare starts with providing reliable, safe, and accessible medical products for every home and facility.",
+  "story_text_2": "We carefully select our products to meet the needs of individuals and healthcare facilities, ensuring a seamless buying experience.",
+  
+  "vision_title": "Our Vision",
+  "vision_desc": "To be the first choice and trusted reference for all medical solutions in the Kingdom.",
+  
+  "mission_title": "Our Mission",
+  "mission_desc": "Providing the latest medical technologies with fair prices and exceptional after-sales service.",
+
+  "values_title": "Our Core Values",
+  "value_1": "Integrity & Transparency",
+  "value_2": "Commitment to Quality",
+  "value_3": "Customer First",
+  "values_desc": "Our principles guide our decisions, and we adhere to them in every interaction.",
+
+  "goals_title": "Our Goals",
+  "goal_1_title": "Quality",
+  "goal_1_desc": "Raising the quality standards of the local health sector with certified products.",
+  "goal_2_title": "Comprehensive Choice",
+  "goal_2_desc": "To be the comprehensive choice for any medical facility by providing integrated services.",
+  "goal_3_title": "Experience",
+  "goal_3_desc": "Delivering an ideal customer experience every time, from order to after-sales.",
+  "goal_4_title": "Knowledge",
+  "goal_4_desc": "To be proactive in knowledge regarding the latest developments in medical technology.",
+  "cta_title": "Building Partnerships & Delivering Medical Solutions",
+  "cta_desc": "Our team is ready to answer your inquiries and meet your needs with the highest quality standards.",
+  "cta_button": "Contact Us Now"
+
+},
+"Contact": {
+  "breadcrumb_home": "Home",
+  "hero_title": "Contact Us",
+  "hero_subtitle": "We are here to help. Whether you have a product inquiry or want a partnership, our team is ready.",
+  "hero_cta": "Enter your details and we will get back to you shortly.",
+  "info_title": "Contact Information",
+  "info_subtitle": "You can reach us via the following channels:",
+  "address_label": "Address",
+  "address_value": "Riyadh, Saudi Arabia",
+  "phone_label": "Phone / WhatsApp",
+  "email_label": "Email Address",
+  "work_hours_label": "Working Hours",
+  "work_hours_value": "sat - Thu: 8 AM - 10 PM",
+  "work_hours_value2": "Fri: 4 PM - 10 PM",
+
+  "form_title": "Send us a Message",
+  "form_name_label": "Full Name",
+  "form_name_placeholder": "First Name, Last Name",
+  "form_phone_label": "Phone Number",
+  "form_phone_placeholder": "05xxxxxxxx",
+  "form_email_label": "Email Address",
+  "form_email_placeholder": "example@domain.com",
+  "form_subject_label": "Subject",
+  "form_subject_placeholder": "Inquiry regarding...",
+  "form_message_label": "Message",
+  "form_message_placeholder": "Type your inquiry details here...",
+  "form_submit_btn": "Send Message",
+  "form_sending": "Sending...",
+  
+  "toast_success": "Message Sent!",
+  "toast_success_desc": "Thank you for contacting us, our team will reply shortly.",
+  "toast_error": "Something went wrong!",
+  "toast_error_desc": "Could not send the message, please try again later."
 }
 }
