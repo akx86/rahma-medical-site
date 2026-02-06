@@ -170,5 +170,57 @@
   "toast_success_desc": "Thank you for contacting us, our team will reply shortly.",
   "toast_error": "Something went wrong!",
   "toast_error_desc": "Could not send the message, please try again later."
-}
+},
+"Services2": {
+    "hero_title": "Our Services",
+    "hero_subtitle": "Providing integrated medical solutions from establishment to home supply, according to the highest Saudi and global standards.",
+    "breadcrumb_home": "Home",
+    "breadcrumb_current": "Services",
+
+    "service_1_title": "Hospitals & Medical Centers Setup",
+    "service_1_desc": "Complete furnishing solutions for major hospitals, including vital departments, operating rooms, and ICUs with the latest technologies.",
+
+    "service_2_title": "Physiotherapy & Rehabilitation Centers",
+    "service_2_desc": "Providing the latest physiotherapy and motor rehabilitation equipment to equip specialized centers ensuring best patient outcomes.",
+
+    "service_3_title": "Specialized & General Clinics",
+    "service_3_desc": "Equipping private clinics (Dental, Derma, Ophthalmology) with diagnostic and treatment equipment befitting your service level.",
+
+    "service_4_title": "School & Corporate Clinics",
+    "service_4_desc": "Establishing primary clinics within schools, universities, and companies according to Ministry of Health regulations.",
+
+    "service_5_title": "Home Care Supplies",
+    "service_5_desc": "Reaching you anywhere with a comprehensive range of medical supplies for individuals (wheelchairs, monitors, consumables) for home comfort.",
+
+    "service_6_title": "Logistics Supply Chain (Gulf)",
+    "service_6_desc": "Fast shipping and supply services covering all KSA regions and the Gulf states, ensuring product safety during transport.",
+
+    "cta_title": "Planning to equip your medical facility?",
+    "cta_desc": "Our engineering and consulting team is ready to provide a comprehensive study of your needs.",
+    "cta_btn": "Request a Quote"
+  },
+  "Partners": {
+    "hero_title": "Partners of Success",
+    "hero_subtitle": "We are proud of our strategic partnerships with major medical and government institutions in the Kingdom.",
+    "breadcrumb_home": "Home",
+    "breadcrumb_current": "Our Partners",
+
+    "clients_title": "Our Distinguished Clients",
+    "clients_desc": "Proudly serving elite medical institutions and government entities:",
+    
+    "client_guard": "National Guard Hospital",
+    "client_khalid": "King Khalid University Hospital",
+    "client_innova": "Innova Pharmacies",
+    "client_orange": "Orange Pharmacies",
+    "client_commission": "Saudi Commission for Health Specialties",
+    "client_alzheimer": "Saudi Alzheimer's Disease Association",
+
+    "suppliers_title": "Global Suppliers Network",
+    "suppliers_desc": "Collaborating with top manufacturers worldwide to ensure the latest medical technology availability.",
+    "suppliers_soon": "Our list of supplier partners will be announced soon...",
+
+    "cta_title": "Join Our Partners List",
+    "cta_desc": "We are always happy to build new and fruitful business relationships.",
+    "cta_btn": "Contact for Partnership"
+  }
 }
