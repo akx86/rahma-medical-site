@@ -7,12 +7,7 @@ import Image from "next/image";
 import { NAV_LINKS } from "@/constants/nav-links";
 import LangSwitcher from "./LangSwitcher";
 import { Button } from "@/components/ui/button";
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-  SheetTitle,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
@@ -35,33 +30,49 @@ export default function Navbar() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8 }}
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ease-in-out",
-        // التعديل 1: الخلفية أتقل (95%) والضل أوضح عشان يفصل الكلام عن محتوى الموقع
+        "fixed top-0 left-0 right-0 z-50 w-full transition-colors duration-500 ease-in-out",
+        
+        
+        "py-4 md:py-6",
         isScrolled
-          ? "bg-white/95 backdrop-blur-md border-b border-slate-200/50 shadow-md py-3"
-          : "bg-transparent py-6"
+          ? "bg-white/95 backdrop-blur-md border-b border-slate-200/50 shadow-md"
+          : "bg-transparent" 
       )}
     >
-      <div className="container mx-auto flex items-center justify-between px-6">
+      {/* التعديل 2: px-4 للموبايل و px-6 للديسكتوب */}
+      <div className="container mx-auto flex items-center justify-between px-4 md:px-6 relative h-full">
         
-        {/* --- Logo Section --- */}
-        <Link href="/" className="flex items-center gap-2">
-          <div className="relative w-40 h-10 md:w-48 md:h-12 overflow-hidden -ml-2 rtl:-mr-2 rtl:ml-0">
+        {/* --- 1. Logo Section --- */}
+        <Link href="/" className="flex items-center gap-2 shrink-0 z-20">
+          <div className={cn(
+            "relative overflow-hidden transition-none -ml-2 rtl:-mr-2 rtl:ml-0",
+            
+            
+            
+            
+            
+            
+            "w-40 h-12 sm:w-48 sm:h-14 md:w-60 md:h-20 lg:w-96"
+          )}>
              <Image 
                 src="/logo.svg" 
                 alt="Rahma Medical Logo" 
                 fill
+                priority
                 className={cn(
-                  "object-contain object-left rtl:object-right scale-[2.8] origin-left rtl:origin-right transition-all duration-300",
-                  // التعديل 2: اللوجو بيرجع طبيعي تماماً (بدون فلاتر) عند السكرول
+                  "object-contain object-left rtl:object-right transition-all duration-500 ease-in-out",
+                  
+                  
+                  "scale-[2.8] origin-left rtl:origin-right translate-y-1", 
+                  
                   isScrolled ? "filter-none" : "brightness-0 invert drop-shadow-md"
                 )} 
              />
           </div>
         </Link>
         
-        {/* --- Desktop Nav Links --- */}
-        <nav className="hidden md:flex items-center gap-8">
+        {/* --- 2. Desktop Nav Links (FIXED CENTER) --- */}
+        <nav className="hidden md:flex items-center gap-6 lg:gap-10 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
           {NAV_LINKS.map((link) => {
             const isActive = pathname === link.href;
             return (
@@ -72,21 +83,18 @@ export default function Navbar() {
               >
                 <span
                   className={cn(
-                    "text-base font-bold transition-colors duration-300 relative z-10",
-                    // التعديل 3: غمقنا الألوان جداً (slate-900) عشان تقرأ بوضوح
+                    "text-sm lg:text-lg font-bold transition-colors duration-300 relative z-10 whitespace-nowrap",
                     isScrolled 
                       ? (isActive ? "text-[#0ea5e9]" : "text-slate-900 hover:text-[#0ea5e9]") 
                       : (isActive ? "text-white" : "text-white/90 hover:text-white")
                   )}
                   style={{ 
-                    // شلنا الضل عند السكرول عشان الكلام يبقى شارب (Sharp)
                     textShadow: !isScrolled && isActive ? "0 0 20px rgba(255,255,255,0.6)" : "none" 
                   }}
                 >
                   {t(link.key)}
                 </span>
 
-                {/* Glow Dot */}
                 {isActive && (
                   <motion.div
                     layoutId="navbar-glow"
@@ -102,17 +110,16 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* --- Lang Switcher --- */}
+        {/* --- 3. Lang Switcher --- */}
         <div className={cn(
-           "hidden md:flex transition-colors duration-300 font-medium",
-           // التعديل 4: اللغة بقت كحلي غامق (slate-900) عند السكرول
+           "hidden md:flex transition-colors duration-300 font-medium shrink-0 z-20",
            isScrolled ? "text-slate-900" : "text-white"
         )}>
           <LangSwitcher />
         </div>
 
         {/* --- Mobile Trigger --- */}
-        <div className="md:hidden flex items-center gap-3">
+        <div className="md:hidden flex items-center gap-3 z-20">
           <div className={isScrolled ? "text-slate-900" : "text-white"}>
              <LangSwitcher />
           </div>

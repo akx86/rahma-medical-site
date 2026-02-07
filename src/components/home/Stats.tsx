@@ -10,19 +10,19 @@ export default function Stats() {
   const stats = [
     {
       id: 1,
-      number: "+10",
+      number: "8",
       label: t("years"),
       icon: ShieldCheck,
     },
     {
       id: 2,
-      number: "+500",
+      number: "+5000",
       label: t("products"),
       icon: Package,
     },
     {
       id: 3,
-      number: "+1000",
+      number: "+10000",
       label: t("clients"),
       icon: Users,
     },
@@ -35,7 +35,7 @@ export default function Stats() {
   ];
 
   return (
-    // التعديل 1: خلفية متدرجة ناعمة بدل الرمادي المصمت، بتدي عمق ونضافة
+    
     <section className="py-16 bg-gradient-to-b from-slate-50 via-white to-white relative z-10">
       <div className="container mx-auto px-6 md:px-12">
         
@@ -48,7 +48,7 @@ export default function Stats() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              // إضافة padding عشان الفواصل متبقاش لازقة في المحتوى
+              
               className="flex flex-col items-center text-center group cursor-default p-4 md:p-0"
             >
               {/* التعديل 2: تأثير الكريستالة للأيقونة */}

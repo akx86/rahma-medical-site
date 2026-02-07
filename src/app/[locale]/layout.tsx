@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google"; // استيراد الخطوط
+import { Inter } from "next/font/google"; 
 import { IBM_Plex_Sans_Arabic } from "next/font/google";
 import "../globals.css"; 
 import { NextIntlClientProvider } from "next-intl";
@@ -8,7 +8,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Toaster } from "@/components/ui/sonner";
 
-// تعريف الخطوط
+
 const inter = Inter({ 
   subsets: ["latin"], 
   variable: "--font-inter",
@@ -16,8 +16,8 @@ const inter = Inter({
 });
 const ibmPlexArabic = IBM_Plex_Sans_Arabic({ 
   subsets: ["arabic"],
-  weight: ["100", "200", "300", "400", "500", "600", "700"], // جبنا كل الأوزان
-  variable: "--font-ibm", // هنسميه ibm
+  weight: ["100", "200", "300", "400", "500", "600", "700"], 
+  variable: "--font-ibm", 
   display: "swap",
 });
 
@@ -31,10 +31,10 @@ type Props = {
 };
 export default async function RootLayout({ children, params }: Props) {
   const { locale } = await params;
-  // تحميل الرسائل الخاصة باللغة الحالية
+  
   const messages = await getMessages();
 
-  // تحديد اتجاه الصفحة
+  
   const direction = locale === "ar" ? "rtl" : "ltr";
 
   return (

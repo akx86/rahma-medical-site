@@ -186,7 +186,7 @@ export default function ContactPage() {
                   <p className="text-slate-700 font-medium">{t("work_hours_value2")}</p>
                 </div>
               </div>
-            </div>
+            </div> 
 
             {/* ✅ 3. Social Media Section (Dynamic from SOCIAL_LINKS) */}
             <div className="mt-14 pt-8 border-t border-slate-200">

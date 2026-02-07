@@ -41,7 +41,7 @@ export default function AboutSummary() {
               mb-6 
               font-[family-name:var(--font-ibm)]
               
-              /* هنا الحل السحري: وسعنا المسافة لـ 1.6 عشان النقاط تاخد راحتها */
+             
               leading-[1.5] md:leading-[1.6]
             ">
               {t("title")}
@@ -57,14 +57,14 @@ export default function AboutSummary() {
               asChild 
               size="lg" 
               className="
-                /* تدرج لوني يعطي عمقاً */
+               
                 bg-gradient-to-r from-sky-600 to-sky-500 
                 text-white rounded-full px-10 py-7 text-base font-bold tracking-wide
                 
-                /* الظل المتوهج (Glow) بلون أزرق بدلاً من الأسود */
+               
                 shadow-[0_4px_20px_rgba(2,132,199,0.3)] 
                 
-                /* تأثيرات الهوفر: توهج أقوى + تكبير بسيط */
+               
                 hover:shadow-[0_6px_25px_rgba(2,132,199,0.6)] 
                 hover:scale-105 hover:from-sky-500 hover:to-sky-400
                 
@@ -73,7 +73,7 @@ export default function AboutSummary() {
             >
               <Link href="/about" className="flex items-center gap-3">
                 {t("button")}
-                <ArrowRight size={20} className="animate-pulse" /> {/* حركة بسيطة للسهم */}
+                <ArrowRight size={20} className="animate-pulse" /> 
               </Link>
             </Button>
           </motion.div>
@@ -91,7 +91,7 @@ export default function AboutSummary() {
               {/* Aspect Ratio */}
               <div className="aspect-[4/3] lg:aspect-square relative bg-slate-100">
                 <Image 
-                  src="/about-image.jpg" 
+                  src="/about-image.png" 
                   alt="Modern Medical Supply Warehouse"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-1000"

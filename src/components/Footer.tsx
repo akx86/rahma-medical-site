@@ -4,7 +4,8 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import Image from "next/image"; 
 import { NAV_LINKS, LEGAL_LINKS, CONTACT_INFO } from "@/constants/nav-links";
-import { Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Twitter, Instagram, ShoppingBag } from "lucide-react";
+import { SOCIAL_LINKS } from "@/constants/contacts";
 
 export default function Footer() {
   const t = useTranslations("Footer");
@@ -43,13 +44,29 @@ export default function Footer() {
                 {t("about_description")}
               </p>
               
-              <div className="flex gap-3 mt-1">
-                {[Facebook, Twitter, Instagram, Linkedin].map((Icon, idx) => (
-                  <a key={idx} href="#" className="group bg-[#0c4a6e]/40 p-2.5 rounded-xl hover:bg-sky-500 transition-all duration-300 text-sky-200 hover:text-white hover:-translate-y-1 hover:shadow-lg hover:shadow-sky-500/20">
-                    <Icon size={18} />
-                  </a>
-                ))}
+               <div className="mt-6 pt-3 border-t border-slate-600">
+              <div className="flex gap-4 flex-wrap">
+                {SOCIAL_LINKS.map((social, index) => {
+                  
+                  let Icon = ShoppingBag; 
+                  if (social.key === 'facebook') Icon = Facebook;
+                  else if (social.key === 'instagram') Icon = Instagram;
+                  else if (social.key === 'twitter') Icon = Twitter;
+                  
+                  return (
+                    <a 
+                      key={index}
+                      href={social.href} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 rounded-full bg-white border border-slate-200 text-slate-400 flex items-center justify-center hover:bg-sky-500 hover:text-white hover:border-sky-500 transition-all duration-300 shadow-sm hover:-translate-y-1"
+                    >
+                      <Icon size={18} />
+                    </a>
+                  );
+                })}
               </div>
+            </div>
             </div>
 
             {/* --- Column 2: Quick Links --- */}

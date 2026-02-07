@@ -2,30 +2,42 @@
 
 import { useTranslations } from "next-intl";
 import { 
-  Stethoscope, 
-  Syringe, 
-  Microscope, 
-  Wrench, 
-  Truck, 
-  Building2,
+  Activity,       
+  Stethoscope,    
+  Monitor,        
+  Syringe,        
+  Home,           
+  Truck,          
   Sparkles 
 } from "lucide-react"; 
 import { motion } from "framer-motion";
 
+
 const SERVICES_DATA = [
-  { id: "equipment", icon: Stethoscope, translationKey: "equipment" },
+  
+  { id: "medical_centers", icon: Activity, translationKey: "medical_centers" },
+  
+  
+  { id: "clinics", icon: Stethoscope, translationKey: "clinics" },
+  
+  
+  { id: "equipment", icon: Monitor, translationKey: "equipment" },
+  
+  
   { id: "supplies", icon: Syringe, translationKey: "supplies" },
-  { id: "lab", icon: Microscope, translationKey: "lab" },
-  { id: "maintenance", icon: Wrench, translationKey: "maintenance" },
-  { id: "logistics", icon: Truck, translationKey: "logistics" },
-  { id: "b2b", icon: Building2, translationKey: "b2b" }
+  
+  
+  { id: "homecare", icon: Home, translationKey: "homecare" },
+  
+  
+  { id: "logistics", icon: Truck, translationKey: "logistics" }
 ];
 
 export default function Services() {
   const t = useTranslations("Services");
 
   return (
-    // الخلفية: لون البراند #289fc7 بيسيح على الأبيض
+    
     <section className="py-24 bg-gradient-to-b from-[#289fc7] via-[#289fc7]/10 to-white relative">
       
       <div className="container mx-auto px-6 md:px-12">
@@ -50,7 +62,7 @@ export default function Services() {
           </p>
         </div>
 
-        {/* === Grid System === */}
+        {/* === Grid System (Now perfectly balanced with 6 items) === */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           
           {SERVICES_DATA.map((service, index) => (
@@ -61,8 +73,6 @@ export default function Services() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               
-              // === التعديل هنا: تلوين الكارت بشياكة ===
-              // بدل bg-white، خليناها جريدينت خفيف جداً من الأبيض للون البراند الشفاف
               className="
                 group relative
                 bg-gradient-to-br from-white to-[#289fc7]/10 

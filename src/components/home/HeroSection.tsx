@@ -9,9 +9,10 @@ import { ArrowRight, ShoppingBag } from "lucide-react";
 import { motion } from "framer-motion";
 
 const HERO_IMAGES = [
-  "/hero-1.jpg",
-  "/hero-2.jpg",
-  "/hero-3.jpg"
+  "/hero-1.png",
+  "/hero-2.png",
+  "/hero-3.png",
+  "/hero-4.png"
 ];
 
 // مدة عرض كل صورة (بالمللي ثانية)
@@ -123,18 +124,25 @@ export default function Hero() {
             </p>
 
             {/* الأزرار */}
+            {/* ✅ التعديل: شلنا justify-center عشان يبدأ من أول السطر مع الكلام */}
             <div className="flex flex-row gap-3 md:gap-4 items-center w-full sm:w-auto">
+              
+              {/* === Button 1: Shop Now === */}
               <Button 
                 asChild 
                 className="
-                  flex-1 sm:flex-none h-11 md:h-16 bg-sky-600 text-white rounded-full text-xs md:text-lg px-4 md:px-8 font-semibold
+                  flex-1 sm:flex-none
+                  md:min-w-[200px]       // حافظنا على العرض الثابت
+                  h-11 md:h-16 
+                  bg-sky-600 text-white rounded-full 
+                  text-xs md:text-lg px-4 md:px-8 font-semibold
                   transition-all duration-300
                   shadow-[0_4px_15px_rgba(2,132,199,0.4)] 
                   hover:shadow-[0_8px_25px_rgba(2,132,199,0.6)] 
                   hover:bg-sky-500 hover:scale-105 active:scale-95
                 "
               >
-                <Link href="/store" className="flex items-center justify-center gap-2">
+                <Link href="https://rahma.store/ar-eg/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
                   {t("shop_now")}
                   <div className="bg-white/20 p-1 rounded-full hidden md:block">
                     <ShoppingBag size={18} />
@@ -142,11 +150,17 @@ export default function Hero() {
                 </Link>
               </Button>
 
+              {/* === Button 2: Contact Us === */}
               <Button 
                 asChild 
                 variant="ghost" 
                 className="
-                  flex-1 sm:flex-none h-11 md:h-16 text-white rounded-full text-xs md:text-lg px-4 md:px-8 border border-white/20 backdrop-blur-sm font-semibold
+                  flex-1 sm:flex-none
+                  md:min-w-[200px]       // حافظنا على العرض الثابت
+                  h-11 md:h-16 
+                  text-white rounded-full 
+                  text-xs md:text-lg px-4 md:px-8 
+                  border border-white/20 backdrop-blur-sm font-semibold
                   transition-all duration-300
                   hover:bg-white/10 hover:border-white/50 
                   hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]
@@ -165,7 +179,7 @@ export default function Hero() {
 
       {/* Scroll Indicator */}
       <motion.div 
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 text-sky-200/60 hidden md:flex"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20  flex-col items-center gap-2 text-sky-200/60 hidden md:flex"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 2, duration: 1 }}

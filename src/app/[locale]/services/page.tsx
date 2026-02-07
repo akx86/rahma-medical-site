@@ -17,11 +17,11 @@ import {
 import { Button } from "@/components/ui/button"; 
 
 export default function ServicesPage() {
-  const t = useTranslations("Services2"); // ✅ استخدام الاسم الجديد
+  const t = useTranslations("Services2"); 
   const locale = useLocale();
   const isRtl = locale === "ar";
 
-  // Animation Variants
+  
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -131,7 +131,7 @@ export default function ServicesPage() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            // ✅ التغيير هنا: الخلفية بقت Gradient Blue مريح بدلاً من الأسود الغشيم
+            
             className="max-w-4xl mx-auto bg-gradient-to-br from-sky-600 to-sky-500 rounded-[2.5rem] p-12 md:p-16 text-white shadow-2xl shadow-sky-500/20 relative overflow-hidden"
           >
             {/* Background Pattern */}
@@ -151,7 +151,7 @@ export default function ServicesPage() {
               <Button 
                 asChild 
                 size="lg" 
-                // ✅ زرار أبيض عشان يتباين مع الخلفية الزرقاء
+                
                 className="bg-white text-sky-600 hover:bg-sky-50 hover:text-sky-700 rounded-full px-12 h-14 text-lg font-bold shadow-lg transition-all hover:scale-105"
               >
                 <Link href="/contact">

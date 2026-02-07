@@ -13,6 +13,6 @@ export const LEGAL_LINKS = [
 export const CONTACT_INFO = {
   phone: "+966549131756",
   email: "info@rahmamedical.com",
-  addressKey: "address", // المفتاح اللي في ملف الترجمة
-  mapLink: "https://maps.app.goo.gl/9JbFVawYGFTDMQQk7", // رابط جوجل مابس
+  addressKey: "address", 
+  mapLink: "https://maps.app.goo.gl/9JbFVawYGFTDMQQk7", 
 };

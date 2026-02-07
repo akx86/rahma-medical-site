@@ -3,7 +3,7 @@
 import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { motion } from "framer-motion";
-import Image from "next/image"; // 👈 استيراد مكون الصور
+import Image from "next/image"; 
 import { 
   Globe,          
   ChevronLeft,
@@ -18,7 +18,7 @@ export default function PartnersPage() {
   const locale = useLocale();
   const isRtl = locale === "ar";
 
-  // Animation Variants
+  
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -32,15 +32,15 @@ export default function PartnersPage() {
     show: { opacity: 1, y: 0, transition: { duration: 0.5 } }
   };
 
-  // ✅ 1. قائمة العملاء (لوجوهات حقيقية)
-  // تأكد إن الصور موجودة في مسار: public/partners/اسم_الصورة
+  
+  
   const CLIENTS = [
-    { id: 1, name: "client_guard", logo: "/partners/ngha.png" },      // الحرس الوطني
-    { id: 2, name: "client_khalid", logo: "/partners/ksumc.png" },    // الملك خالد (جامعة الملك سعود)
-    { id: 3, name: "client_commission", logo: "/partners/scfhs.png" }, // التخصصات الصحية
-    { id: 4, name: "client_innova", logo: "/partners/innova.png" },   // انوفا
-    { id: 5, name: "client_orange", logo: "/partners/orange.png" },   // اورانج
-    { id: 6, name: "client_alzheimer", logo: "/partners/alzheimer.png" }, // الزهايمر
+    { id: 1, name: "client_guard", logo: "/partners/ngha.png" },      
+    { id: 2, name: "client_khalid", logo: "/partners/ksumc.png" },    
+    { id: 3, name: "client_commission", logo: "/partners/scfhs.png" }, 
+    { id: 4, name: "client_innova", logo: "/partners/innova.png" },   
+    { id: 5, name: "client_orange", logo: "/partners/orange.png" },   
+    { id: 6, name: "client_alzheimer", logo: "/partners/alzheimer.png" }, 
   ];
 
   return (
@@ -97,7 +97,7 @@ export default function PartnersPage() {
               <motion.div
                 key={client.id}
                 variants={item}
-                // ✅ التعديل هنا: شلنا justify-center عشان نتحكم احنا بالمسافات، وضفنا gap-2
+                
                 className="group bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-sky-100/50 hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center h-[200px] relative"
               >
                 {/* Logo Container */}

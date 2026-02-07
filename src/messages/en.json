@@ -47,24 +47,30 @@
   "badge_sub": "Compliant with Standards"
 },
 "Services": {
-  "subtitle": "Our Services",
-  "title": "Integrated Medical Solutions",
-  "description": "We offer a comprehensive range of services to meet the healthcare sector needs, from supply to after-sales support.",
-  "items": {
-    "equipment_title": "Hospital Equipment",
-    "equipment_desc": "Providing the latest medical devices for ORs and ICUs.",
-    "supplies_title": "Medical Supplies",
-    "supplies_desc": "Supplying daily consumables and PPE at the best prices.",
-    "lab_title": "Lab Solutions",
-    "lab_desc": "Precise laboratory tools ensuring reliable analysis results.",
-    "maintenance_title": "Maintenance & Support",
-    "maintenance_desc": "Specialized engineering team ensuring device efficiency 24/7.",
-    "logistics_title": "Logistics & Delivery",
-    "logistics_desc": "Strong distribution network covering all regions safely.",
-    "b2b_title": "Wholesale Sector",
-    "b2b_desc": "Special offers and facilities for tenders and bulk orders."
-  }
-},
+    "title": "Our Premium Services",
+    "subtitle": "Integrated Medical Solutions",
+    "description": "We offer a comprehensive range of services to meet the needs of the medical sector and individuals with the highest quality standards.",
+
+    "items": {
+      "medical_centers_title": "Physiotherapy & Rehab Centers",
+      "medical_centers_desc": "Complete setup for physiotherapy and rehabilitation centers with the latest sports and therapeutic equipment.",
+
+      "clinics_title": "Specialized & School Clinics",
+      "clinics_desc": "Providing all medical supplies for private clinics and school clinics, ensuring a safe and fully equipped health environment.",
+
+      "equipment_title": "Modern Medical Equipment",
+      "equipment_desc": "We provide the latest medical technologies and devices for diagnosis and treatment, ensuring quality and compliance.",
+
+      "supplies_title": "Medical Consumables",
+      "supplies_desc": "Supply of all medical consumables (gloves, masks, sterilization tools) for facilities and individuals.",
+
+      "homecare_title": "Home Care Supplies",
+      "homecare_desc": "Everything a patient needs at home, from wheelchairs to assistive devices, delivered to your doorstep.",
+
+      "logistics_title": "Logistics & Shipping",
+      "logistics_desc": "Strong logistics network to deliver orders across the Kingdom and the Gulf safely and quickly."
+    }
+  },
 "FeaturedProducts": {
   "subtitle": "Shop Online",
   "title": "Everything You Need in One Place",
