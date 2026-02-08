@@ -227,6 +227,11 @@
 
     "cta_title": "Join Our Partners List",
     "cta_desc": "We are always happy to build new and fruitful business relationships.",
-    "cta_btn": "Contact for Partnership"
+    "cta_btn": "Contact for Partnership",
+    "client_security_forces": "Security Forces Hospital (Riyadh)",
+  "client_fahd_military": "King Fahd Military Medical Complex (Dhahran)",
+  "client_salman_spec": "King Salman Specialist Hospital (Taif)",
+
+  "visit_site": "Visit Website"
   }
 }

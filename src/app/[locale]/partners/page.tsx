@@ -9,7 +9,9 @@ import {
   ChevronLeft,
   ChevronRight,
   Home as HomeIcon,
-  Handshake
+  Handshake,
+  Award,
+  CheckCircle2
 } from "lucide-react";
 import { Button } from "@/components/ui/button"; 
 
@@ -18,22 +20,21 @@ export default function PartnersPage() {
   const locale = useLocale();
   const isRtl = locale === "ar";
 
-  
+  // Animation Variants
   const container = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
-      transition: { staggerChildren: 0.1 }
+      transition: { staggerChildren: 0.15 }
     }
   };
 
   const item = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+    hidden: { opacity: 0, y: 30 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.6, type: "spring", bounce: 0.3 } }
   };
 
-  
-  
+  // ==================== DATA ====================
   const CLIENTS = [
     { id: 1, name: "client_guard", logo: "/partners/ngha.png" },      
     { id: 2, name: "client_khalid", logo: "/partners/ksumc.png" },    
@@ -41,12 +42,24 @@ export default function PartnersPage() {
     { id: 4, name: "client_innova", logo: "/partners/innova.png" },   
     { id: 5, name: "client_orange", logo: "/partners/orange.png" },   
     { id: 6, name: "client_alzheimer", logo: "/partners/alzheimer.png" }, 
+    { id: 7, name: "client_security_forces", logo: "/partners/sfh.png" }, 
+    { id: 8, name: "client_fahd_military", logo: "/partners/kfmmc.png" }, 
+    { id: 9, name: "client_salman_spec", logo: "/partners/kssh.png" },    
+  ];
+
+  const SUPPLIERS = [
+    { id: 1, name: "NH Kaiyang", logo: "/partners/kaiyang.png" },
+    { id: 2, name: "Topmost Medical", logo: "/partners/topmost.png" },
+    { id: 3, name: "ZYT TCM", logo: "/partners/zyt.png" },
+    { id: 4, name: "Aria Wheels", logo: "/partners/aria.png" },
+    { id: 5, name: "Invacare", logo: "/partners/invacare.png" },
+    { id: 6, name: "Shanghai Winsha", logo: "/partners/winsha.png" }, 
   ];
 
   return (
-    <main className="w-full bg-slate-50 min-h-screen font-[family-name:var(--font-ibm)]">
+    <main className="w-full bg-white min-h-screen font-[family-name:var(--font-ibm)]">
       
-      {/* ==================== 1. Standard Gradient Banner ==================== */}
+      {/* ==================== 1. Header Banner (Restored to Sky Blue) ==================== */}
       <section className="relative pt-32 pb-32 lg:pt-40 lg:pb-48 overflow-hidden bg-gradient-to-r from-sky-600 to-sky-500">
         <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-10 mix-blend-overlay" />
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
@@ -77,13 +90,13 @@ export default function PartnersPage() {
         </div>
       </section>
 
-      {/* ==================== 2. Clients Section (Logos Grid) 🖼️ ==================== */}
+      {/* ==================== 2. Clients Section (White Background) ==================== */}
       <section className="py-24 bg-white relative z-20">
         <div className="container mx-auto px-6">
-          
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-slate-800 mb-4">{t("clients_title")}</h2>
-            <p className="text-slate-500 max-w-2xl mx-auto">{t("clients_desc")}</p>
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">{t("clients_title")}</h2>
+            <div className="h-1 w-20 bg-sky-500 mx-auto rounded-full" />
+            <p className="text-slate-500 mt-4 max-w-2xl mx-auto">{t("clients_desc")}</p>
           </div>
 
           <motion.div 
@@ -91,88 +104,115 @@ export default function PartnersPage() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 lg:gap-8"
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8"
           >
             {CLIENTS.map((client) => (
               <motion.div
                 key={client.id}
                 variants={item}
-                
-                className="group bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-sky-100/50 hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center h-[200px] relative"
+                className="group flex items-center justify-center p-8 rounded-2xl border border-slate-100 bg-white hover:border-sky-100 hover:shadow-xl hover:shadow-sky-100/50 transition-all duration-500 h-[180px] relative overflow-hidden"
               >
-                {/* Logo Container */}
-                <div className="relative w-full h-24 flex items-center justify-center transition-all duration-300 group-hover:-translate-y-4">
-                  <Image 
-                    src={client.logo} 
-                    alt={t(client.name)}
-                    fill 
-                    className="object-contain grayscale group-hover:grayscale-0 transition-all duration-500 opacity-60 group-hover:opacity-100 scale-90 group-hover:scale-105"
-                  />
-                </div>
-
-                {/* Name Label - ✅ التعديل هنا */}
-                {/* شلنا absolute bottom-6 وخليناها جزء من الفلو الطبيعي */}
-                <h3 className="text-sm font-bold  text-slate-500 group-hover:text-sky-600 transition-all duration-300 text-center opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 h-0 group-hover:h-auto group-hover:mb-4 overflow-hidden">
-                   {t(client.name)}
-                </h3>
+                <Image 
+                  src={client.logo} 
+                  alt={t(client.name)}
+                  fill 
+                  className="object-contain p-8 grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"
+                />
+                <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-transparent via-sky-400 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
               </motion.div>
             ))}
           </motion.div>
         </div>
       </section>
 
-      {/* ==================== 3. Suppliers Section (Global Network Placeholder) ==================== */}
-      <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/world-map.png')] opacity-10 bg-center bg-no-repeat bg-contain pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-900 via-transparent to-slate-900" />
+      {/* ==================== 3. Suppliers Section (Blue Gradient Background) ==================== */}
+      <section className="py-28 relative overflow-hidden bg-gradient-to-b from-sky-600 via-sky-500 to-sky-50">
+        
+        {/* Pattern Overlay */}
+        <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-10 mix-blend-overlay pointer-events-none" />
+        
+        {/* Top Separator Line */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
 
-        <div className="container mx-auto px-6 relative z-10 text-center">
+        <div className="container mx-auto px-6 relative z-10">
           
-          <div className="mb-16">
-            <div className="w-16 h-16 bg-sky-500/10 rounded-full flex items-center justify-center mx-auto mb-6 text-sky-400">
+          <div className="flex flex-col items-center justify-center text-center mb-20">
+            <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center mb-6 text-white border border-white/20">
                <Globe size={32} />
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("suppliers_title")}</h2>
-            <p className="text-slate-400 max-w-2xl mx-auto text-lg">{t("suppliers_desc")}</p>
+            
+            <h2 className="text-4xl font-bold text-white mb-6 drop-shadow-sm">{t("suppliers_title")}</h2>
+            <p className="text-sky-50 max-w-2xl mx-auto text-lg leading-relaxed opacity-90">{t("suppliers_desc")}</p>
           </div>
 
           <motion.div 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 opacity-30 blur-[1px] select-none pointer-events-none"
+            variants={container}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-100px" }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
-             {[1, 2, 3, 4].map((i) => (
-               <div key={i} className="h-28 rounded-xl border border-slate-700 bg-slate-800/50 flex items-center justify-center">
-                 <span className="text-slate-600 font-bold text-lg">Partner {i}</span>
-               </div>
+             {SUPPLIERS.map((supplier) => (
+               <motion.div
+                 key={supplier.id}
+                 variants={item}
+                 // White Card pop-out effect
+                 className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:shadow-sky-900/20 hover:-translate-y-2 transition-all duration-500 flex flex-col items-center text-center"
+               >
+                 
+                 {/* Badge Icon */}
+                 <div className="absolute top-4 right-4 rtl:left-4 rtl:right-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <Award className="text-sky-500 w-6 h-6" />
+                 </div>
+
+                 {/* Logo Area */}
+                 <div className="h-24 w-full flex items-center justify-center mb-6 relative">
+                    <Image 
+                      src={supplier.logo} 
+                      alt={supplier.name} 
+                      fill
+                      className="object-contain p-2 group-hover:scale-105 transition-transform duration-500"
+                    />
+                 </div>
+
+                 {/* Divider */}
+                 <div className="w-16 h-0.5 bg-slate-100 group-hover:bg-sky-500 transition-colors duration-500 mb-5" />
+
+                 {/* Name */}
+                 <h3 className="text-xl font-bold text-slate-800 group-hover:text-sky-700 transition-colors">
+                   {supplier.name}
+                 </h3>
+                 
+                 {/* Supplier Badge */}
+                 <div className="mt-3 flex items-center gap-1.5 text-xs font-semibold text-sky-600 bg-sky-50 px-3 py-1 rounded-full border border-sky-100">
+                   <CheckCircle2 size={12} />
+                   <span>{isRtl ? "شريك دولي" : "Global Partner"}</span>
+                 </div>
+
+                 {/* Bottom Gradient Line */}
+                 <div className="absolute bottom-0 left-10 right-10 h-1.5 bg-sky-500 rounded-t-full translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500" />
+               </motion.div>
              ))}
           </motion.div>
-
-          <div className="mt-12">
-            <span className="inline-block px-6 py-2 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-sm font-medium animate-pulse">
-              {t("suppliers_soon")}
-            </span>
-          </div>
 
         </div>
       </section>
 
       {/* ==================== 4. CTA Section ==================== */}
-      <section className="py-20 bg-white border-t border-slate-100">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-6 text-center">
           <motion.div
              initial={{ opacity: 0, y: 20 }}
              whileInView={{ opacity: 1, y: 0 }}
              viewport={{ once: true }}
           >
-            <Handshake size={48} className="text-sky-500 mx-auto mb-6 opacity-80" strokeWidth={1.5} />
-            <h2 className="text-3xl font-bold text-slate-800 mb-4">{t("cta_title")}</h2>
+            <Handshake size={48} className="text-sky-600 mx-auto mb-6" strokeWidth={1.5} />
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">{t("cta_title")}</h2>
             <p className="text-slate-500 mb-8 max-w-lg mx-auto">{t("cta_desc")}</p>
             <Button 
               asChild 
               size="lg" 
-              className="bg-slate-900 hover:bg-sky-600 text-white rounded-full px-8 h-12 shadow-lg transition-all"
+              className="bg-slate-900 hover:bg-sky-600 text-white rounded-full px-8 h-12 shadow-xl transition-all"
             >
               <Link href="/contact">
                 {t("cta_btn")}
