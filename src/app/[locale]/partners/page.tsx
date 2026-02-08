@@ -2,7 +2,7 @@
 
 import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/i18n/routing";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Image from "next/image"; 
 import { 
   Globe,          
@@ -21,7 +21,7 @@ export default function PartnersPage() {
   const isRtl = locale === "ar";
 
   // Animation Variants
-  const container = {
+  const container : Variants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
@@ -29,7 +29,7 @@ export default function PartnersPage() {
     }
   };
 
-  const item = {
+  const item : Variants = {
     hidden: { opacity: 0, y: 30 },
     show: { opacity: 1, y: 0, transition: { duration: 0.6, type: "spring", bounce: 0.3 } }
   };
