@@ -91,7 +91,7 @@ To facilitate future development, the project follows a modular structure:
 **If you need to move the project to a new server or continue development:**
 **1. Clone the repository:**
 ```bash
-git clone [https://github.com/akx86/rahma-medical-site](https://github.com/akx86/rahma-medical-site)
+git clone https://github.com/akx86/rahma-medical-site
 ```
 **2. Install dependencies:**
 ```bash
