@@ -20,7 +20,7 @@ export default function PartnersPage() {
   const locale = useLocale();
   const isRtl = locale === "ar";
 
-  // Animation Variants
+  
   const container : Variants = {
     hidden: { opacity: 0 },
     show: {
@@ -34,7 +34,7 @@ export default function PartnersPage() {
     show: { opacity: 1, y: 0, transition: { duration: 0.6, type: "spring", bounce: 0.3 } }
   };
 
-  // ==================== DATA ====================
+  
   const CLIENTS = [
     { id: 1, name: "client_guard", logo: "/partners/ngha.png" },      
     { id: 2, name: "client_khalid", logo: "/partners/ksumc.png" },    
@@ -54,6 +54,7 @@ export default function PartnersPage() {
     { id: 4, name: "Aria Wheels", logo: "/partners/aria.png" },
     { id: 5, name: "Invacare", logo: "/partners/invacare.png" },
     { id: 6, name: "Shanghai Winsha", logo: "/partners/winsha.png" }, 
+    { id: 7, name: "photondust", logo: "/partners/photondust.png" }, 
   ];
 
   return (
@@ -156,7 +157,7 @@ export default function PartnersPage() {
                <motion.div
                  key={supplier.id}
                  variants={item}
-                 // White Card pop-out effect
+                 
                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:shadow-sky-900/20 hover:-translate-y-2 transition-all duration-500 flex flex-col items-center text-center"
                >
                  

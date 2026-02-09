@@ -7,6 +7,7 @@ import { getMessages } from "next-intl/server";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Toaster } from "@/components/ui/sonner";
+import WhatsAppBtn from "@/components/WhatsAppBtn";
 
 
 const inter = Inter({ 
@@ -48,6 +49,7 @@ export default async function RootLayout({ children, params }: Props) {
           <Navbar />
           <main className="flex-grow">
             {children}
+            <WhatsAppBtn/>
             <Toaster position="top-center" richColors theme="light" closeButton />
             </main>
           <Footer />

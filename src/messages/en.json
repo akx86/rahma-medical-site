@@ -146,21 +146,23 @@
 "Contact": {
   "breadcrumb_home": "Home",
   "hero_title": "Contact Us",
-  "hero_subtitle": "We are here to help. Whether you have a product inquiry or want a partnership, our team is ready.",
-  "hero_cta": "Enter your details and we will get back to you shortly.",
-  "info_title": "Contact Information",
+  "hero_subtitle": "We are here to help. Whether you have a product inquiry or partnership request, our team is ready.",
+  "hero_cta": "Enter your details and we will respond shortly.",
+  
+  "info_title": "Contact Info",
   "info_subtitle": "You can reach us via the following channels:",
   "address_label": "Address",
   "address_value": "Riyadh, Saudi Arabia",
   "phone_label": "Phone / WhatsApp",
   "email_label": "Email Address",
   "work_hours_label": "Working Hours",
-  "work_hours_value": "sat - Thu: 8 AM - 10 PM",
-  "work_hours_value2": "Fri: 4 PM - 10 PM",
+  "work_hours_value": "Sat - Thu: 8 AM - 10 PM",
+  "work_hours_value2": "Friday: 4 PM - 10 PM",
+  "follow_us": "Follow Us",
 
   "form_title": "Send us a Message",
   "form_name_label": "Full Name",
-  "form_name_placeholder": "First Name, Last Name",
+  "form_name_placeholder": "First, Last Name",
   "form_phone_label": "Phone Number",
   "form_phone_placeholder": "05xxxxxxxx",
   "form_email_label": "Email Address",
@@ -168,15 +170,48 @@
   "form_subject_label": "Subject",
   "form_subject_placeholder": "Inquiry regarding...",
   "form_message_label": "Message",
-  "form_message_placeholder": "Type your inquiry details here...",
+  "form_message_placeholder": "Write your inquiry details here...",
   "form_submit_btn": "Send Message",
   "form_sending": "Sending...",
   
   "toast_success": "Message Sent!",
   "toast_success_desc": "Thank you for contacting us, our team will reply shortly.",
-  "toast_error": "Something went wrong!",
-  "toast_error_desc": "Could not send the message, please try again later."
-},
+  "toast_error": "Error Occurred",
+  "toast_error_desc": "Could not send message, please try again later.",
+  "toast_complaint_success": "Complaint received successfully",
+
+  "dept_section_title": "Contact Department Directly",
+  "dept_section_desc": "Choose the department you need and you will be redirected to WhatsApp instantly",
+  "dept_wholesale_title": "Wholesale Sales",
+  "dept_wholesale_desc": "Direct contact with Mr. Hassan for projects & bulk orders",
+  "dept_online_title": "Online Store",
+  "dept_online_desc": "Contact Ms. Hadeel for technical support & orders",
+  "dept_online_badge": "Instant Support",
+  "dept_showroom_title": "Main Showroom",
+  "dept_showroom_desc": "Contact the showroom via the unified number",
+  "btn_whatsapp": "Direct WhatsApp",
+  "btn_support": "Store Support",
+  "btn_call_showroom": "Call Showroom",
+  "management_badge": "Senior Management",
+  "complaint_24_hours": "24 Hours",
+  "complaint_follow_up": "Privacy",
+
+  "complaint_hero_title": "Your Opinion Matters..",
+  "complaint_hero_subtitle": "We Are Here To Listen",
+  "complaint_hero_desc": "At Rahma Medical, we strive for excellence. If you face any issue or have a suggestion, we promise your message will reach management directly.",
+  "complaint_response_time": "Reply within",
+  "complaint_ticket_no": "Complete Confidentiality",
+  "form_complaints_title": "Complaints & Suggestions Form",
+  "form_complaints_desc": "We ensure your message is processed by management directly",
+  "complaint_name_placeholder": "Your Name",
+  "complaint_type_label": "Message Type",
+  "complaint_type_complaint": "Complaint",
+  "complaint_type_suggestion": "Suggestion",
+  "complaint_type_urgent": "Urgent Matter",
+  "complaint_message_placeholder": "Write the details of your complaint or suggestion...",
+  "complaint_submit_btn": "Send to Management"
+}
+,
 "Services2": {
     "hero_title": "Our Services",
     "hero_subtitle": "Providing integrated medical solutions from establishment to home supply, according to the highest Saudi and global standards.",
@@ -233,5 +268,23 @@
   "client_salman_spec": "King Salman Specialist Hospital (Taif)",
 
   "visit_site": "Visit Website"
+  },
+  "HomePartners": {
+  "title": "Our Partners",
+  "subtitle": "Trusted by leading medical institutions",
+  "view_all": "View All Partners"
+},
+"ContactWidget": {
+    "greeting": "Welcome 👋",
+    "help_text": "How can we help you today?",
+    "wholesale_label": "Wholesale Sales (Mr. Hassan)",
+    "wholesale_sub": "For Hospitals & Bulk Orders",
+    "online_label": "Online Store (Ms. Hadeel)",
+    "online_sub": "For Individual Orders & Shipping",
+    "showroom_label": "Main Showroom",
+    "showroom_sub": "Our Location on Map",
+    "complaints_label": "Complaints & Suggestions",
+    "complaints_sub": "Contact Management Directly"
   }
+
 }

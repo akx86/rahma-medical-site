@@ -144,10 +144,11 @@
   "cta_button": "تواصل معنا الآن"
 },
 "Contact": {
-  "breadcrumb_home": "الرئيسية",  
+  "breadcrumb_home": "الرئيسية",
   "hero_title": "تواصل معنا",
   "hero_subtitle": "نحن هنا لمساعدتك. سواء كان لديك استفسار عن منتج أو ترغب في شراكة، فريقنا جاهز للرد.",
   "hero_cta": "أدخل بياناتك وسيتم الرد عليك في أقرب وقت.",
+  
   "info_title": "بيانات الاتصال",
   "info_subtitle": "يمكنك التواصل معنا عبر القنوات التالية:",
   "address_label": "العنوان",
@@ -157,6 +158,10 @@
   "work_hours_label": "ساعات العمل",
   "work_hours_value": "السبت - الخميس: 8 ص - 10 م",
   "work_hours_value2": "الجمعة: 4 م - 10 م",
+  "follow_us": "تابعنا على",
+  "management_badge": "الإدارة العليا",
+  "complaint_24_hours": "24 ساعة",
+  "complaint_follow_up": "الخصوصية",
 
   "form_title": "أرسل لنا رسالة",
   "form_name_label": "الاسم بالكامل",
@@ -175,7 +180,36 @@
   "toast_success": "تم الإرسال بنجاح!",
   "toast_success_desc": "شكراً لتواصلك معنا، سيقوم فريقنا بالرد عليك قريباً.",
   "toast_error": "حدث خطأ!",
-  "toast_error_desc": "لم نتمكن من إرسال الرسالة، يرجى المحاولة لاحقاً."
+  "toast_error_desc": "لم نتمكن من إرسال الرسالة، يرجى المحاولة لاحقاً.",
+  "toast_complaint_success": "تم استلام الشكوى بنجاح وسيتم مراجعتها",
+
+  "dept_section_title": "تواصل مع القسم المختص مباشرة",
+  "dept_section_desc": "اختر القسم الذي تريد التواصل معه وسيتم تحويلك فوراً إلى المحادثة عبر واتساب",
+  "dept_wholesale_title": "مبيعات الجملة",
+  "dept_wholesale_desc": "تواصل مباشر مع أ. حسن للمشاريع والكميات",
+  "dept_online_title": "التجارة الإلكترونية",
+  "dept_online_desc": "تواصل مع أ. هديل للدعم الفني والطلبات",
+  "dept_online_badge": "دعم فوري",
+  "dept_showroom_title": "المعرض الرئيسي",
+  "dept_showroom_desc": "تواصل مع المعرض عبر الرقم الموحد",
+  "btn_whatsapp": "واتساب مباشر",
+  "btn_support": "دعم المتجر",
+  "btn_call_showroom": "اتصال بالمعرض",
+
+  "complaint_hero_title": "رأيك يهمنا..",
+  "complaint_hero_subtitle": "نحن هنا لنستمع إليك",
+  "complaint_hero_desc": "في رحمة الطبية, نسعى دائماً للتميز. إذا واجهت أي مشكلة أو كان لديك اقتراح للتطوير، نعدك بأن رسالتك ستصل للإدارة مباشرة.",
+  "complaint_response_time": "رد خلال",
+  "complaint_ticket_no": "سرية تامة",
+  "form_complaints_title": "نموذج الشكاوى والمقترحات",
+  "form_complaints_desc": "نضمن وصول رسالتك للإدارة مباشرة ومعالجتها",
+  "complaint_name_placeholder": "الاسم الكريم",
+  "complaint_type_label": "نوع الرسالة",
+  "complaint_type_complaint": "شكوى",
+  "complaint_type_suggestion": "اقتراح",
+  "complaint_type_urgent": "أمر عاجل",
+  "complaint_message_placeholder": "اكتب تفاصيل الشكوى أو الاقتراح هنا...",
+  "complaint_submit_btn": "إرسال للإدارة"
 },
 "Services2": {
     "hero_title": "خدماتنا",
@@ -233,5 +267,22 @@
   "client_salman_spec": "مستشفى الملك سلمان التخصصي (الطائف)",
   "visit_site": "زيارة الموقع"
     
+  },
+  "HomePartners": {
+  "title": "شركاء النجاح",
+  "subtitle": "نفخر بثقة كبرى المؤسسات الطبية",
+  "view_all": "عرض كل الشركاء"
+},
+"ContactWidget": {
+    "greeting": "مرحباً بك 👋",
+    "help_text": "كيف يمكننا مساعدتك اليوم؟",
+    "wholesale_label": "مبيعات الجملة (أ. حسن)",
+    "wholesale_sub": "للمستشفيات والطلبات الكبيرة",
+    "online_label": "المتجر الإلكتروني (أ. هديل)",
+    "online_sub": "للطلبات الفردية والشحن",
+    "showroom_label": "المعرض الرئيسي",
+    "showroom_sub": "موقعنا على الخريطة",
+    "complaints_label": "الشكاوى والاقتراحات",
+    "complaints_sub": "تواصل مع الإدارة مباشرة"
   }
 }

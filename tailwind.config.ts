@@ -23,15 +23,14 @@ const config = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        // ألوان رحمة (أزرق طبي + تدرجات)
         brand: {
           50: "#f0f9ff",
           100: "#e0f2fe",
           200: "#bae6fd",
           300: "#7dd3fc",
           400: "#38bdf8",
-          500: "#0ea5e9", // اللون الرئيسي المقترح
-          600: "#0284c7", // لون الهوفر
+          500: "#0ea5e9",
+          600: "#0284c7",
           700: "#0369a1",
           800: "#075985",
           900: "#0c4a6e",
@@ -71,7 +70,6 @@ const config = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
-      // إضافة انيميشن بسيط للكروت عشان العميل طلب "حركة جيدة"
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
@@ -84,13 +82,24 @@ const config = {
         shimmer: {
           "100%": { transform: "translateX(100%)" },
         },
+        "shimmer-sweep": {
+          "0%": { transform: "translateX(-150%) skewX(-20deg)" },
+          "100%": { transform: "translateX(150%) skewX(-20deg)" },
+        },
+        // 👇 الجديد: انميشن الموجة الناعمة (لزرار الواتساب)
+        ripple: {
+          "0%": { transform: "scale(0.8)", opacity: "1" },
+          "100%": { transform: "scale(2.4)", opacity: "0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         shimmer: "shimmer 1.5s infinite",
+        "shimmer-sweep": "shimmer-sweep 8s linear infinite",
+        // 👇 الجديد: مدة 3 ثواني عشان تكون هادية جداً
+        ripple: "ripple 5s linear infinite",
       },
-      
     },
   },
   plugins: [require("tailwindcss-animate")],

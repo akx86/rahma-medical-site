@@ -5,6 +5,7 @@ import Services from "@/components/home/Services";
 import FeaturedProducts from "@/components/home/FeaturedProducts";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import CTASection from "@/components/home/CTASection";
+import HomePartners from "@/components/home/HomePartners";
 export default function Home() {
   
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Stats/>
       <AboutSummary/>
       <Services/>
+      <HomePartners />
       <FeaturedProducts/>
       <WhyChooseUs/>
       <CTASection/>
