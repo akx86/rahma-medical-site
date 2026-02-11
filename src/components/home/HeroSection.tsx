@@ -15,7 +15,6 @@ const HERO_IMAGES = [
   "/hero-4.png"
 ];
 
-// مدة عرض كل صورة (بالمللي ثانية)
 const SLIDE_DURATION = 6000; 
 
 export default function Hero() {
@@ -32,7 +31,6 @@ export default function Hero() {
   return (
     <section className="relative w-full h-[55dvh] min-h-[450px] md:min-h-0 md:h-screen flex items-center overflow-hidden bg-sky-900">
       
-      {/* 1. طبقة الخلفية (Images Layer) */}
       <div className="absolute inset-0 w-full h-full z-0">
         {HERO_IMAGES.map((src, index) => {
           const isActive = index === currentIndex;
@@ -41,27 +39,21 @@ export default function Hero() {
             <motion.div
               key={index}
               className="absolute inset-0 w-full h-full"
-              // الحالة الابتدائية: لو دي الصورة الأولى (0) ابدأ ظاهرة، غير كده ابدأ مخفي
               initial={{ 
                 opacity: index === 0 ? 1 : 0, 
                 scale: 1 
               }}
-              // الحركة:
               animate={{
                 opacity: isActive ? 1 : 0,
-                // لو نشطة: كبر الصورة لـ 1.15 (Zoom In)
-                // لو غير نشطة: ارجع لـ 1 (عشان لما ييجي دورها تاني تبدأ من الأول)
+
                 scale: isActive ? 1.15 : 1, 
                 zIndex: isActive ? 10 : 0
               }}
               transition={{
-                // التداخل (Fade): ناعم جداً لمدة 2 ثانية
                 opacity: { duration: 2, ease: "easeInOut" },
-                // الزوم: بطيء وخطي ومستمر طول مدة العرض
                 scale: { duration: SLIDE_DURATION / 1000 + 2, ease: "linear" } 
               }}
             >
-              {/* الماسك عشان يخلي الصورة تختفي من تحت بنعومة */}
               <div className="absolute inset-0 w-full h-full [mask-image:linear-gradient(to_bottom,black_70%,transparent_100%)]">
                 <Image 
                   src={src}
@@ -70,7 +62,7 @@ export default function Hero() {
                   style={{ objectFit: "cover", objectPosition: "center top" }}
                   className="object-cover" 
                   quality={90}
-                  priority={true} // تحميل فوري لكل الصور لمنع التقطيع
+                  priority={true} 
                 />
               </div>
             </motion.div>
@@ -78,16 +70,13 @@ export default function Hero() {
         })}
       </div>
 
-      {/* === Overlays (طبقات التغميق) === */}
-      {/* طبقة عشان النص يبان */}
+
       <div className="absolute inset-0 bg-gradient-to-r from-sky-950/90 via-sky-900/50 to-transparent z-10 rtl:bg-gradient-to-l pointer-events-none" />
-      
-      {/* 2. طبقة المحتوى (Content Layer) */}
-      {/* لاحظ: مفيش key هنا، فالعنصر ده مش هيتعمل له Re-render أبداً */}
+
       <div className="container relative z-20 mx-auto px-6 md:px-12 h-full flex flex-col justify-center pt-20 md:pt-0"> 
         
         <div className="max-w-3xl">
-          {/* الأنميشن ده بيحصل مرة واحدة بس أول ما الموقع يفتح */}
+
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -123,8 +112,6 @@ export default function Hero() {
               {t("subtitle")}
             </p>
 
-            {/* الأزرار */}
-            {/* ✅ التعديل: شلنا justify-center عشان يبدأ من أول السطر مع الكلام */}
             <div className="flex flex-row gap-3 md:gap-4 items-center w-full sm:w-auto">
               
               {/* === Button 1: Shop Now === */}
@@ -132,7 +119,7 @@ export default function Hero() {
                 asChild 
                 className="
                   flex-1 sm:flex-none
-                  md:min-w-[200px]       // حافظنا على العرض الثابت
+                  md:min-w-[200px]       
                   h-11 md:h-16 
                   bg-sky-600 text-white rounded-full 
                   text-xs md:text-lg px-4 md:px-8 font-semibold
@@ -156,7 +143,7 @@ export default function Hero() {
                 variant="ghost" 
                 className="
                   flex-1 sm:flex-none
-                  md:min-w-[200px]       // حافظنا على العرض الثابت
+                  md:min-w-[200px]       
                   h-11 md:h-16 
                   text-white rounded-full 
                   text-xs md:text-lg px-4 md:px-8 

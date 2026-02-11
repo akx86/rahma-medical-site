@@ -163,7 +163,7 @@ export default function ContactPage() {
               </div>
               <div className="flex items-start gap-5">
                 <div className="w-12 h-12 rounded-full bg-white text-sky-600 shadow-sm flex items-center justify-center shrink-0 border border-slate-100"><Phone size={20} /></div>
-                <div><h4 className="font-bold text-xs text-slate-400 uppercase mb-1">{t("phone_label")}</h4><p className="text-slate-900 text-lg font-bold font-[family-name:var(--font-geist-mono)]" dir="ltr">+966 54 913 1756</p></div>
+                <div><h4 className="font-bold text-xs text-slate-400 uppercase mb-1">{t("phone_label")}</h4><p className="text-slate-900 text-lg font-bold font-[family-name:var(--font-geist-mono)]" dir="ltr">+966 50 007 4979</p></div>
               </div>
               <div className="flex items-start gap-5">
                 <div className="w-12 h-12 rounded-full bg-white text-sky-600 shadow-sm flex items-center justify-center shrink-0 border border-slate-100"><Mail size={20} /></div>
@@ -171,7 +171,6 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Social Links (Fixed Position: Just below info) */}
             <div className="mt-12 pt-8 border-t border-slate-200">
                <p className="text-xs text-slate-400 mb-4 font-bold uppercase">{t("follow_us")}</p>
                <div className="flex gap-3 flex-wrap">
@@ -212,7 +211,6 @@ export default function ContactPage() {
                       <FormItem>
                         <FormLabel>{t("form_name_label")}</FormLabel>
                         <FormControl>
-                          {/* ✅ Added placeholder */}
                           <Input placeholder={t("form_name_placeholder")} {...field} className="bg-slate-50 border-slate-200 h-12 rounded-xl focus:border-sky-500" />
                         </FormControl>
                         <FormMessage />
@@ -226,7 +224,6 @@ export default function ContactPage() {
                       <FormItem>
                         <FormLabel>{t("form_phone_label")}</FormLabel>
                         <FormControl>
-                          {/* ✅ Added placeholder */}
                           <Input placeholder={t("form_phone_placeholder")} {...field} className="bg-slate-50 border-slate-200 h-12 rounded-xl focus:border-sky-500" />
                         </FormControl>
                         <FormMessage />
@@ -241,7 +238,6 @@ export default function ContactPage() {
                     <FormItem>
                       <FormLabel>{t("form_email_label")}</FormLabel>
                       <FormControl>
-                        {/* ✅ Added placeholder */}
                         <Input placeholder={t("form_email_placeholder")} {...field} className="bg-slate-50 border-slate-200 h-12 rounded-xl focus:border-sky-500" />
                       </FormControl>
                       <FormMessage />
@@ -255,7 +251,6 @@ export default function ContactPage() {
                     <FormItem>
                       <FormLabel>{t("form_subject_label")}</FormLabel>
                       <FormControl>
-                        {/* ✅ Added placeholder */}
                         <Input placeholder={t("form_subject_placeholder")} {...field} className="bg-slate-50 border-slate-200 h-12 rounded-xl focus:border-sky-500" />
                       </FormControl>
                       <FormMessage />
@@ -269,7 +264,6 @@ export default function ContactPage() {
                     <FormItem>
                       <FormLabel>{t("form_message_label")}</FormLabel>
                       <FormControl>
-                        {/* ✅ Added placeholder */}
                         <Textarea placeholder={t("form_message_placeholder")} {...field} className="bg-slate-50 border-slate-200 min-h-[120px] rounded-xl focus:border-sky-500 resize-none p-4" />
                       </FormControl>
                       <FormMessage />
@@ -313,8 +307,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Premium Complaints Section */}
-      {/* ✅ Increased margin-bottom to mb-40 to prevent overlapping with Map */}
       <section className="w-full py-24 bg-gradient-to-br from-sky-600 to-sky-500 relative overflow-hidden mb-40">
         <div className="absolute top-0 left-0 w-full h-full bg-[url('/pattern.png')] opacity-10 mix-blend-overlay" />
         <div className="absolute top-1/2 right-10 w-96 h-96 bg-white/10 rounded-full blur-[100px] pointer-events-none" />

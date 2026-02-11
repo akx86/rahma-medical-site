@@ -10,10 +10,8 @@ export default function CTASection() {
   const t = useTranslations("CTASection");
 
   return (
-    // التغيير: رجعنا للخلفية البيضاء عشان النظافة والهدوء
     <section className="relative py-24 bg-white overflow-hidden">
       
-      {/* Pattern: دوائر فاتحة جداً تدي شكل جمالي من غير ما تزحم العين */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-40">
         <div className="absolute -top-[50%] -left-[10%] w-[500px] h-[500px] rounded-full border-[40px] border-slate-50" />
         <div className="absolute top-[20%] right-[5%] w-[300px] h-[300px] rounded-full border-[20px] border-sky-50" />
@@ -22,7 +20,6 @@ export default function CTASection() {
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           
-          {/* Title: لون غامق (slate-900) عشان يقرأ كويس على الخلفية البيضاء */}
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -33,7 +30,6 @@ export default function CTASection() {
             {t("title")}
           </motion.h2>
 
-          {/* Description: لون رمادي متوسط */}
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -44,7 +40,6 @@ export default function CTASection() {
             {t("description")}
           </motion.p>
 
-          {/* Button: الزرار هنا هو "البطل" باللون الأزرق بتاع البراند */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

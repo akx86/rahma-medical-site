@@ -34,7 +34,6 @@ export default function AboutSummary() {
                     {t("subtitle")}
                 </span>
             </div>
-            {/* العنوان الكبير - التعديل الأول (حل مشكلة السطور) */}
             <h2 className="
               text-3xl md:text-5xl 
               font-bold text-slate-900 
@@ -52,7 +51,6 @@ export default function AboutSummary() {
               {t("description")}
             </p>
 
-            {/* الزرار - التعديل الثاني (Premium Glow Effect) */}
             <Button 
               asChild 
               size="lg" 

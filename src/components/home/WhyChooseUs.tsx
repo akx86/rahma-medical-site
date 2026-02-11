@@ -47,7 +47,6 @@ export default function WhyChooseUs() {
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         
-        {/* === Header Section (تم الربط بالترجمة) === */}
         <div className="text-center max-w-2xl mx-auto mb-16 flex flex-col items-center">
           
           {/* Badge */}
@@ -56,18 +55,16 @@ export default function WhyChooseUs() {
               <Award size={14} fill="currentColor" />
             </span>
             <span className="text-white font-bold tracking-wide text-sm md:text-base font-[family-name:var(--font-inter)] uppercase">
-              {t("subtitle")} {/* ✅ مربوطة الآن */}
+              {t("subtitle")} 
             </span>
           </div>
 
-          {/* Main Title */}
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-[family-name:var(--font-ibm)]">
-             {t("title")} {/* ✅ مربوطة الآن */}
+             {t("title")} 
           </h2>
           
-          {/* Main Description */}
           <p className="text-sky-100 text-lg opacity-90">
-            {t("description")} {/* ✅ مربوطة الآن */}
+            {t("description")} 
           </p>
         </div>
 
@@ -79,7 +76,6 @@ export default function WhyChooseUs() {
               key={feature.id} 
               className="flex flex-col items-center text-center group"
             >
-              {/* Icon Container */}
               <div className="
                 w-20 h-20 rounded-2xl bg-white/10 backdrop-blur-md
                 flex items-center justify-center mb-6
@@ -91,7 +87,6 @@ export default function WhyChooseUs() {
                 <feature.icon size={36} />
               </div>
 
-              {/* Text (مربوطة أوتوماتيك عن طريق الـ Map) */}
               <h3 className="text-xl font-bold mb-3 font-[family-name:var(--font-ibm)]">
                 {t(feature.titleKey)}
               </h3>

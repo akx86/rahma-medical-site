@@ -13,22 +13,17 @@ export default function Footer() {
 
   return (
     <footer className="relative mt-20">
-      
-      {/* التدرج العلوي */}
+
       <div className="absolute top-0 left-0 right-0 w-full h-20 -translate-y-full bg-gradient-to-b from-transparent to-[#082f49] backdrop-blur-[1px] pointer-events-none"></div>
 
-      {/* جسم الفوتر */}
       <div className="bg-[#082f49] text-white pb-8 pt-6">
         <div className="container mx-auto px-4">
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-8">
-            
-            {/* --- Column 1: Logo & About (UPDATED FOR MOBILE CENTER) --- */}
-            {/* التعديل 1: خلينا المحاذاة سنتر للموبايل، وبداية (start) للشاشات الأكبر */}
+
             <div className="flex flex-col gap-4 items-center text-center md:items-start md:text-start">
               
               <Link href="/" className="inline-block">
-                {/* التعديل 2: الهوامش السلبية خليناها للديسك توب بس (md:) عشان اللوجو يبقى في نص الموبايل بالظبط من غير ما يميل */}
                 <div className="relative w-[260px] h-[90px] md:w-[300px] md:h-[100px] overflow-hidden md:-ml-6 md:rtl:-mr-6 mb-[-10px]">
                   <Image 
                     src="/logo.svg" 

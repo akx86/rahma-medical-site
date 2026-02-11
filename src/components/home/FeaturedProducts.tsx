@@ -50,11 +50,6 @@ export default function FeaturedProducts() {
           </Button>
         </div>
 
-        {/* === Static Grid Layout (التصميم الثابت) === */}
-        {/* grid-cols-2: الموبايل (اتنين جنب بعض)
-            md:grid-cols-3: التابلت (تلاتة جنب بعض)
-            lg:grid-cols-6: الديسك توب (الستة كلهم صف واحد)
-        */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 md:gap-6 justify-center items-start">
           
           {CATEGORIES.map((cat, index) => (
@@ -62,12 +57,10 @@ export default function FeaturedProducts() {
               key={cat.id}
               className="flex flex-col items-center group cursor-pointer"
             >
-              {/* الدائرة */}
               <div className="
                 w-28 h-28 md:w-36 md:h-36 lg:w-40 lg:h-40 relative rounded-full 
                 border-4 border-slate-50 shadow-sm bg-white
                 overflow-hidden 
-                /* تأثير الهوفر البسيط (تكبير خفيف وتغيير لون الحدود) */
                 group-hover:border-[#289fc7] group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-[#289fc7]/20
                 transition-all duration-300 ease-out
               ">
@@ -79,7 +72,6 @@ export default function FeaturedProducts() {
                 />
               </div>
 
-              {/* الاسم */}
               <span className="mt-4 text-slate-700 font-bold text-sm md:text-base font-[family-name:var(--font-ibm)] group-hover:text-[#289fc7] transition-colors">
                 {t(`items.${cat.translationKey}`)}
               </span>

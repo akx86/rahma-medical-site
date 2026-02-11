@@ -5,8 +5,7 @@ import { useLocale } from "next-intl";
 export default function WhatsAppBtn() {
   const locale = useLocale();
   const isRtl = locale === "ar";
-  
-  // رقم المبيعات الخارجية
+
   const PHONE_NUMBER = "966500074979"; 
   const MESSAGE = encodeURIComponent("السلام عليكم، استفسار بخصوص منتجات رحمة");
 
@@ -16,24 +15,22 @@ export default function WhatsAppBtn() {
 
   return (
     <div className={`fixed bottom-6 ${isRtl ? "left-6" : "right-6"} z-50 group`}>
-      
-      {/* Tooltip (تلميح) */}
+
       <div className={`absolute bottom-full mb-3 ${isRtl ? "left-0" : "right-0"} w-max opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none`}>
         <div className="bg-slate-800 text-white text-xs py-1.5 px-3 rounded-lg shadow-sm whitespace-nowrap">
           تواصل مع المبيعات الخارجية
         </div>
       </div>
 
-      {/* الزرار الأخضر */}
       <button
         onClick={handleClick}
         className="relative flex items-center justify-center w-16 h-16 bg-[#25D366] hover:bg-[#1ebc57] rounded-full shadow-lg hover:shadow-[#25D366]/50 transition-all duration-300 hover:-translate-y-1"
         aria-label="Chat on WhatsApp"
       >
-        {/* تأثير النبض (Pulse) */}
+
         <span className="absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-20 animate-ping"></span>
         
-        {/* 👇👇 أيقونة واتساب الرسمية (SVG) 👇👇 */}
+
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
           width="32" 

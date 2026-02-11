@@ -39,7 +39,6 @@ export default function Navbar() {
           : "bg-transparent" 
       )}
     >
-      {/* التعديل 2: px-4 للموبايل و px-6 للديسكتوب */}
       <div className="container mx-auto flex items-center justify-between px-4 md:px-6 relative h-full">
         
         {/* --- 1. Logo Section --- */}

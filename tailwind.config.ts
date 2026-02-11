@@ -86,7 +86,6 @@ const config = {
           "0%": { transform: "translateX(-150%) skewX(-20deg)" },
           "100%": { transform: "translateX(150%) skewX(-20deg)" },
         },
-        // 👇 الجديد: انميشن الموجة الناعمة (لزرار الواتساب)
         ripple: {
           "0%": { transform: "scale(0.8)", opacity: "1" },
           "100%": { transform: "scale(2.4)", opacity: "0" },
@@ -97,7 +96,6 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
         shimmer: "shimmer 1.5s infinite",
         "shimmer-sweep": "shimmer-sweep 8s linear infinite",
-        // 👇 الجديد: مدة 3 ثواني عشان تكون هادية جداً
         ripple: "ripple 5s linear infinite",
       },
     },

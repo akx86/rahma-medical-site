@@ -11,7 +11,7 @@ export const LEGAL_LINKS = [
 ];
 
 export const CONTACT_INFO = {
-  phone: "+966549131756",
+  phone: "+966500074979",
   email: "info@rahmamedical.com",
   addressKey: "address", 
   mapLink: "https://maps.app.goo.gl/9JbFVawYGFTDMQQk7", 

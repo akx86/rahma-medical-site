@@ -58,7 +58,6 @@ export default function AboutPageCorporate() {
              animate={{ opacity: 1, y: 0 }} 
              transition={{ duration: 0.6 }}
            >
-             {/* ✅ Breadcrumb Updated: يقرأ "من نحن" الآن */}
              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-sm text-sky-50 mb-8 mx-auto hover:bg-white/20 transition-colors cursor-default">
                 <Link href="/" className="hover:text-white transition-colors flex items-center gap-1">
                   <Home size={14} /> {t("breadcrumb_home")}
@@ -72,7 +71,6 @@ export default function AboutPageCorporate() {
                {t("story_title")}
              </h1>
 
-             {/* ✅ Subtitle Added: الجملة الاحترافية الجديدة */}
              <motion.p 
                initial={{ opacity: 0 }}
                animate={{ opacity: 1 }}
