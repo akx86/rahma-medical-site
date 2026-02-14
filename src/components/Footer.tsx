@@ -30,6 +30,7 @@ export default function Footer() {
                     alt="Rahma Medical Logo" 
                     fill
                     priority
+                    unoptimized
                     className="object-contain object-start brightness-0 invert scale-[2.5]" 
                   />
                 </div>

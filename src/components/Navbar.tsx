@@ -45,12 +45,6 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-2 shrink-0 z-20">
           <div className={cn(
             "relative overflow-hidden transition-none -ml-2 rtl:-mr-2 rtl:ml-0",
-            
-            
-            
-            
-            
-            
             "w-40 h-12 sm:w-48 sm:h-14 md:w-60 md:h-20 lg:w-96"
           )}>
              <Image 
@@ -58,6 +52,7 @@ export default function Navbar() {
                 alt="Rahma Medical Logo" 
                 fill
                 priority
+                unoptimized
                 className={cn(
                   "object-contain object-left rtl:object-right transition-all duration-500 ease-in-out",
                   
