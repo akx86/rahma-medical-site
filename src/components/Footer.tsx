@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import Image from "next/image"; 
-import { NAV_LINKS, LEGAL_LINKS, CONTACT_INFO } from "@/constants/nav-links";
+import { NAV_LINKS, CONTACT_INFO } from "@/constants/nav-links"; // شيلنا LEGAL_LINKS من هنا عشان هنكتبهم يدوي
 import { Phone, Mail, MapPin, Facebook, Twitter, Instagram, ShoppingBag } from "lucide-react";
 import { SOCIAL_LINKS } from "@/constants/contacts";
 
@@ -84,22 +84,32 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* --- Column 3: Legal --- */}
+            {/* --- Column 3: Legal (Updated) --- */}
             <div>
               <h3 className="text-base font-bold mb-4 text-white tracking-wide">
                 {t("legal")}
               </h3>
               <ul className="space-y-3">
-                {LEGAL_LINKS.map((link) => (
-                  <li key={link.key}>
+                {/* Privacy Policy */}
+                <li>
                     <Link 
-                      href={link.href}
+                      href="/privacy-policy"
                       className="text-blue-200/70 hover:text-white hover:translate-x-2 rtl:hover:-translate-x-2 transition-all duration-300 inline-block text-sm"
                     >
-                      {t(link.key)}
+                      {/* تأكد إنك ضفت المفتاح ده في الجيسون */}
+                      {t("privacy_policy")} 
                     </Link>
-                  </li>
-                ))}
+                </li>
+                {/* Terms and Conditions */}
+                <li>
+                    <Link 
+                      href="/terms"
+                      className="text-blue-200/70 hover:text-white hover:translate-x-2 rtl:hover:-translate-x-2 transition-all duration-300 inline-block text-sm"
+                    >
+                       {/* تأكد إنك ضفت المفتاح ده في الجيسون */}
+                      {t("terms_conditions")}
+                    </Link>
+                </li>
               </ul>
             </div>
 
@@ -127,7 +137,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a href={CONTACT_INFO.mapLink} target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 text-blue-100/80 hover:text-white group transition-colors">
-                     <div className="bg-[#0c4a6e]/50 p-2 rounded-lg group-hover:bg-sky-500 transition-colors shadow-sm mt-1 border border-white/5">
+                      <div className="bg-[#0c4a6e]/50 p-2 rounded-lg group-hover:bg-sky-500 transition-colors shadow-sm mt-1 border border-white/5">
                       <MapPin size={16} />
                     </div>
                     <span className="text-sm font-medium leading-relaxed">{t(CONTACT_INFO.addressKey)}</span>

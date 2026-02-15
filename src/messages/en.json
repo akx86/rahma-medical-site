@@ -20,7 +20,9 @@
     "terms": "Terms & Conditions",
     "contact_us": "Contact Us",
     "address": "Riyadh, Saudi Arabia",
-    "copyright": "All rights reserved © 2026 Rahma Medical"
+    "copyright": "All rights reserved © 2026 Rahma Medical",
+    "privacy_policy": "Privacy Policy",
+    "terms_conditions": "Terms & Conditions"
   },
 "Hero": {
   "title": "Quality Healthcare Begins Here",
@@ -263,8 +265,12 @@
   "client_fahd_military": "King Fahd Military Medical Complex (Dhahran)",
   "client_salman_spec": "King Salman Specialist Hospital (Taif)",
 
-  "visit_site": "Visit Website"
-  },
+  "visit_site": "Visit Website",
+"logistics_label": "Logistics Partner",
+  "logistics_title": "Strategic Partnership with Istawdatk",
+  "logistics_desc": "We are proud to partner with 'Istawdatk' to provide integrated storage and delivery solutions, ensuring our products reach you with the highest standards of speed and safety.",
+  "visit_partner": "Visit Partner Website"
+},
   "HomePartners": {
   "title": "Our Partners",
   "subtitle": "Trusted by leading medical institutions",
@@ -281,6 +287,35 @@
     "showroom_sub": "Our Location on Map",
     "complaints_label": "Complaints & Suggestions",
     "complaints_sub": "Contact Management Directly"
+  },
+  "Privacy": {
+    "title": "Privacy Policy",
+    "last_updated": "Last Updated: February 2026",
+    "content": [
+      "Rahma respects the privacy of its website visitors and is committed to protecting any information collected during the use of the website.",
+      "We collect limited information only when you submit a contact form or send an inquiry, such as your name, contact number, and email address.",
+      "This information is used solely to respond to inquiries, for professional communication, and to improve the website content.",
+      "We do not use it for unsolicited marketing, and we do not sell or share personal data with third parties.",
+      "The website may use cookies to enhance user experience and analyze traffic in a general and non-identifiable manner.",
+      "We take appropriate measures to protect personal information from unauthorized access or misuse.",
+      "The website may contain links to external websites, and we are not responsible for their privacy policies.",
+      "Users have the right to request access, modification, or deletion of their personal data, or to stop further communication at any time.",
+      "This privacy policy may be updated from time to time, and any changes will be published on this page."
+    ],
+    "contact": "For privacy-related inquiries, please contact us at: info@rahmamedical.com"
+  },
+  "Terms": {
+    "title": "Terms and Conditions",
+    "content": [
+      "By using the Rahma website, you agree to comply with these terms and conditions.",
+      "The website is intended to provide informational and corporate content about Rahma and its services and does not function as an online store or sales platform.",
+      "All content on the website, including text, designs, and logos, is the property of Rahma and may not be copied, used, or reproduced without prior permission.",
+      "Rahma strives to ensure the accuracy of the information provided but does not guarantee that the content is error-free or complete at all times.",
+      "Rahma shall not be held liable for any misuse of the information on the website or for any damages resulting from such use.",
+      "The website may contain links to external websites, and Rahma is not responsible for their content or usage policies.",
+      "Rahma reserves the right to modify these terms and conditions at any time. Updates will be published on this page."
+    ],
+    "contact": "For inquiries regarding these terms and conditions, please contact: info@rahmamedical.com"
   }
 
 }
