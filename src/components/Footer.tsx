@@ -125,7 +125,7 @@ export default function Footer() {
                 <li>
                   <a
                     href={`tel:${CONTACT_INFO.phone}`}
-                    className="flex items-center gap-3 text-blue-100/80 hover:text-white group transition-colors justify-center md:justify-start"
+                    className="flex items-center gap-3 text-blue-100/80 hover:text-white group transition-colors justify-start md:justify-start"
                   >
                     <div className="bg-[#0c4a6e]/50 p-2 rounded-lg group-hover:bg-sky-500 transition-colors shadow-sm border border-white/5">
                       <Phone size={16} />
@@ -138,7 +138,7 @@ export default function Footer() {
                 <li>
                   <a
                     href={`mailto:${CONTACT_INFO.email}`}
-                    className="flex items-center gap-3 text-blue-100/80 hover:text-white group transition-colors justify-center md:justify-start"
+                    className="flex items-center gap-3 text-blue-100/80 hover:text-white group transition-colors justify-start md:justify-start"
                   >
                     <div className="bg-[#0c4a6e]/50 p-2 rounded-lg group-hover:bg-sky-500 transition-colors shadow-sm border border-white/5">
                       <Mail size={16} />
@@ -153,7 +153,7 @@ export default function Footer() {
                     href={CONTACT_INFO.mapLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-start gap-3 text-blue-100/80 hover:text-white group transition-colors justify-center md:justify-start"
+                    className="flex items-start gap-3 text-blue-100/80 hover:text-white group transition-colors justify-start md:justify-start"
                   >
                     <div className="bg-[#0c4a6e]/50 p-2 rounded-lg group-hover:bg-sky-500 transition-colors shadow-sm mt-1 border border-white/5">
                       <MapPin size={16} />
